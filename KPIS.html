@@ -319,6 +319,13 @@
                 height: 20px;
            
             }
+            p.other{
+
+				font-family: "Tahoma"; 
+                font-size: 15px ; 
+                height: 20px;
+                color: #000000;
+            }
 
         </style> 
 
@@ -329,7 +336,7 @@
 
     </head>
 
-    <body>
+    <body onload="fncOnload()">
         <div id="divWrap" class="divWrap"> 
             <!-- Use Interface UI--> 
             <div id="divTitle" class="DTitle" style="visibility: visible;"> 
@@ -438,14 +445,17 @@
 
 
                 <div class="divTime">
+
             
-                <input type="date" id="myDate" style="width:100px;" >
+                <input type="date" id="myDate" style="width:145px;" >
+                <br>
                 Select Time:
-                <select id="selectTimeType"  style="width:100px;">
+                <br>
+                <select id="selectTimeType"  style="width:110px;">
                     <option value="Audi">Original ETA</option>
                     <option value="Audi">Placed @</option>
                 </select>
-
+                <br>
 
                 
                 <input  class="time" type="time" id="myTime"  style="width:85px;height:20px" >
@@ -465,7 +475,8 @@
                 <button onclick="calcDifference()" type="button" style="width:60px;height:25px" >Calculate</button> 
                 <input  style="width:100px;height:20px" class="time" type="text" id="txtDiff" value="" placeholder="Time Difference" readonly />  
 
-                
+                <p class="other" id="demo" > Consesion if Cancelled: $25</p>
+                <p class="other" id="demo2" > Consesion if Late: $10</p>
 
 <br><br>
                 <input  style="width:100px;height:20px" class="time" type="text" id="txtTime1" value=""  readonly />
@@ -509,9 +520,27 @@ window.setInterval(function(){
 }, 1000);
 
 
+function fncOnload(){
+var date = new Date();
+
+var day = date.getDate();
+var month = date.getMonth() + 1;
+var year = date.getFullYear();
+
+if (month < 10) month = "0" + month;
+if (day < 10) day = "0" + day;
+
+var today = year + "-" + month + "-" + day;       
+document.getElementById("myDate").value = today;
+
+
+}
+
 
 
 function calcDifference(){
+
+
 
 // index of Time Zone
 var indexTypeType = document.getElementById("selectTimeType").selectedIndex
@@ -575,27 +604,48 @@ var theTime2 = parseInt(HOUR_AM_PM)
 //alert(strMilHour1  + "  " + strMilHour2);
 //alert(theTime1  + "  " + theTime2);
 
+//DATES 2
+var date = [];
+
+
+ date[0] = moment().tz('Pacific/Honolulu').format("YYYY-MM-DD");
+ date[1] = moment().tz('America/Anchorage').format("YYYY-MM-DD");   //
+ date[2] = moment().tz('America/Los_Angeles').format("YYYY-MM-DD");   //
+ date[3] = moment().tz('America/Phoenix').format("YYYY-MM-DD");   //
+ date[4] = moment().tz('America/Denver').format("YYYY-MM-DD");   //
+ date[5] = moment().tz('America/Tegucigalpa').format("YYYY-MM-DD");   //
+ date[6] = moment().tz('America/Chicago').format("YYYY-MM-DD");   //
+ date[7] = moment().tz('America/New_York').format("YYYY-MM-DD");   //
+
+
+
 
 var dateStr2 ;
+
+   dateStr2 =  date[indexTimeZone] + " " +  strMilHour2 + ":" + temp2_1[0]+ ":00";
+
+   /* USELESS IF
 
 if (theTime1 > theTime2) // Time1 > Time2
 {
     // Default set same date
-    dateStr2 =  "2014-06-20 " + strMilHour2 + ":" + temp2_1[0]+ ":00";
+    dateStr2 =  date[indexTimeZone] + strMilHour2 + ":" + temp2_1[0]+ ":00";
 
     // if theTime1 is PM and  theTime2 is AM
     if ((theTime1 == 12 || theTime1 == 13 || theTime1 == 14 || theTime1 == 15 || theTime1 == 16 || theTime1 == 17 || theTime1 == 18 || theTime1 == 19 || theTime1 == 20 || theTime1 == 21 || theTime1 == 22 || theTime1 == 23) && (theTime2 == 0 || theTime2 == 1 || theTime2 == 2 || theTime2 == 3 || theTime2 == 4 || theTime2 == 5 || theTime2 == 6 || theTime2 == 7 || theTime2 == 8 || theTime2 == 9 || theTime2 == 10 || theTime2 == 11 )) 
     {
         // Set 1 day later
-        dateStr2 = "2014-06-21 " + strMilHour2 + ":" + temp2_1[0]+ ":00";
+        dateStr2 = date[indexTimeZone] + strMilHour2 + ":" + temp2_1[0]+ ":00";
     }
 }
 else{// Time1 < Time2
     // Default set same date
-    dateStr2 =  "2014-06-20 " + strMilHour2 + ":" + temp2_1[0]+ ":00";
+    dateStr2 =  date[indexTimeZone] + strMilHour2 + ":" + temp2_1[0]+ ":00";
 }
-
-var dateStr1 = "2014-06-20 " + dateONE;
+*/
+var dateStr1 = document.getElementById("myDate").value + " " + dateONE;
+//alert("dateStr1[" + dateStr1 + "]");//dateStr1[2019-04-16 12:00]
+//alert("dateStr2[" + dateStr2 + "]");//dateStr2[2019-04-1622:54:00]
 
 
 //var dateStr2 = "2014-06-07 " + temp2[0] + ":"+ temp2_1[0] + ":00" ;
@@ -615,7 +665,7 @@ differenceInMinutes = duration.asMinutes(); // if you would like to have the out
 
 
 var x = duration;
-document.getElementById("txtDiff").value = x ;
+
 
 
 /*
@@ -636,6 +686,114 @@ var dateStr1 = "2014-06-20 " + dateONE;
 /*
 */
 
+
+//PT24H // Late: 1 day
+
+//P0D  //Same hour and minute
+
+//PT1M  // Late: 1 minute
+//PT1H  //Late: 1 hour
+//PT1H1M  //Late: 1 hour and 1 minute
+
+//-PT1H // On_Time: 1 hour
+//-PT1M // On_Time: 1 minute
+//-PT1H1M  //On_Time 1 hour and 1 minute
+
+w = x.toString();
+//
+z =  x.toString();
+
+var h = "0";
+var m = "0";
+
+
+
+var y = "";
+
+if (w == "P0D")  // Same Time
+{
+y = "Same Time";
+}
+else if(w.charAt(0) == "-") // On_Time
+{ 
+
+w = w.replace("-", "");	
+w = w.replace("M", " M ");	
+w = w.replace("H", " H ");
+w = w.replace("PT", "");
+
+y = "On Time by " + w;
+
+}
+else if(w.charAt(0) == "P"){ // LATE
+
+// contains H
+//z = PT1H1M
+var charIndex = 1;
+var charIndex2;
+
+if (z.includes("H")) {
+	 charIndex = z.indexOf("H"); 
+	h = z.substring(2, charIndex);
+}
+
+
+if (z.includes("M")) {
+	charIndex2 = z.indexOf("M"); 
+	m = z.substring(charIndex + 1, charIndex2);
+}
+
+
+//alert("m" + m + " h" + h)	;
+// how many minutes late
+var totalMinutes = (parseInt(h) * 60 ) + parseInt(m) ;
+
+//alert (totalMinutes);
+
+var CancelledCons;
+if (totalMinutes <= 15) {
+
+
+}
+else if (totalMinutes <= 30){
+
+}
+else{
+
+
+}
+
+var LateCons;
+if (totalMinutes <= 15) {
+
+
+}
+else if (totalMinutes <= 30){
+
+}
+else{
+
+
+}
+
+document.getElementById("demo").innerHTML = "Consesion if Cancelled: $" + CancelledCons;
+document.getElementById("demo2").innerHTML = "Consesion if Late: $" + LateCons;
+
+
+w = w.replace("M", " M ");	
+w = w.replace("H", " H ");
+w = w.replace("PT", "");
+
+y = "Late by " + w;
+}
+
+
+
+
+
+
+document.getElementById("txtDiff").value = y ;
+
 }
 
 
@@ -646,7 +804,8 @@ var dateStr1 = "2014-06-20 " + dateONE;
 
 function myUpdate() {
 
-var time1 = moment().tz('Pacific/Honolulu').format("hh:mm a z");   //
+//format("YYYY-MM-DD");   
+var time1 = moment().tz('Pacific/Honolulu').format("hh:mm a z");
 var time2 = moment().tz('America/Anchorage').format("hh:mm a z");   //
 var time3 = moment().tz('America/Los_Angeles').format("hh:mm a z");   //
 var time4 = moment().tz('America/Phoenix').format("hh:mm a z");   //
@@ -656,6 +815,10 @@ var time7 = moment().tz('America/Chicago').format("hh:mm a z");   //
 var time8 = moment().tz('America/New_York').format("hh:mm a z");   //
 
 
+
+
+
+//alert("FORMAT" + time1.toDate();
 
 
 /*
