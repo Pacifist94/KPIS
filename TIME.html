@@ -1,0 +1,812 @@
+<html>
+    <head>
+        <title>TIME</title>
+        <style> 
+
+            html,body{ 
+                margin:0; 
+            } 
+
+            div.divTime{ 
+                    background-image: -webkit-linear-gradient(top, #00cc44, #ccffdd); 
+                opacity:0.85; 
+                width: 165px; 
+                height: 410px; 
+                position: fixed;
+                left: 0px;
+                top: 0px;
+            } 
+
+            input{ 
+                font-family: "Tahoma"; 
+                font-size: 15px; 
+            } 
+
+            select{ 
+                font-family: "Tahoma"; 
+                font-size: 15px; 
+            } 
+
+            button{ 
+                font-family: "Corbel"; 
+            } 
+            button.green{ 
+               color: #FFFFFF; 
+            } 
+            p_hidden{ 
+                color: #000000; 
+                opacity:0.0; 
+            } 
+            p_title{ 
+                font-family: "Candara"; 
+                font-size: 20px; 
+                color: #ffffff; 
+            } 
+         
+            div.DTitle{ 
+                position: absolute; 
+                top: 0px; 
+                left: 0px; 
+                width: 500px; 
+                height: 25px; 
+                padding: 0px; 
+                opacity: 0.8; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999); 
+            } 
+            div.UI{ 
+                position: absolute; 
+                top: 25px; 
+                left: 0px; 
+                width: 500px; 
+                height:500px; 
+                padding: 0px; 
+                opacity: 0.8; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #1ab2ff, #e6f7ff); 
+            } 
+            div.NumberChange{ 
+                position: absolute; 
+                width:520px; 
+                height:310px; 
+                padding: 15px; 
+                opacity: 0.7; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #000000); 
+            } 
+            div.RateChange{ 
+                position: absolute; 
+                width: 520px; 
+                height: 240px; 
+                padding: 15px; 
+                opacity: 0.7; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #000000); 
+            } 
+            div.SIMChange{ 
+                position: absolute; 
+                width: 520px; 
+                height: 260px; 
+                padding: 15px; 
+                opacity: 0.7; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999, #999999, #999999, #999999,#999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #000000); 
+            } 
+            div.FeaturesChange{ 
+                position: absolute; 
+                width: 520px; 
+                height: 310px; 
+                padding: 15px; 
+                opacity: 0.7; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999, #999999,#999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #000000); 
+            } 
+            div.MakePayment{ 
+                position: absolute; 
+                width: 520px; 
+                height: 100px; 
+                padding: 15px; 
+                opacity: 0.7; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999, #999999, #999999, #999999, #999999, #000000); 
+            } 
+            div.Datapasses{ 
+                position: absolute; 
+                width: 520px; 
+                height: 60px; 
+                padding: 15px; 
+                opacity: 0.7; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999, #999999, #999999, #999999, #999999, #000000); 
+            } 
+            div.Trouble{ 
+                position: absolute; 
+                width: 520px; 
+                height: 120px; 
+                padding: 15px; 
+                opacity: 0.7; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999, #999999, #999999, #999999, #999999, #000000); 
+            } 
+            div.PortConv{ 
+                position: absolute; 
+                width: 520px; 
+                height: 270px; 
+                padding: 15px; 
+                opacity: 0.7; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999, #999999, #999999, #999999, #999999, #000000); 
+            } 
+            div.sub1,div.sub2 { 
+               position: absolute; 
+            } 
+            div.SelfHelp{ 
+                position: absolute; 
+                visibility: hidden; 
+            } 
+            div.SelfHelpOp{ 
+                position: relative; 
+                background-color: #000000; 
+                color: #ffffff; 
+                top: -285px; 
+                padding: 15px; 
+                width: 520px; 
+                height: 890px; 
+                opacity:0.99; 
+                visibility: hidden; 
+            } 
+            div.Table{ 
+                position: absolute; 
+                left: 240px; 
+                top: 490px; 
+                width: 300px; 
+                height: 220px; 
+            } 
+            div.Scratch{ 
+                position: absolute; 
+                left: 228px; 
+                top: 65px; 
+                padding: 2px; 
+                opacity:0.9; 
+                visibility: hidden; 
+                font-family: "Candara"; 
+                font-size: 12px; 
+            } 
+            div.MemoBtn{ 
+                position: absolute; 
+                left: 0px; 
+                top: 975px; 
+                width: 540px; 
+                padding: 5px; 
+                opacity: 0.9; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999, #999999, #000000); 
+            } 
+            div.Memo{ 
+                position: absolute; 
+                left: 0px; 
+                top: 1010px; 
+                opacity: 0.9; 
+                visibility: hidden; 
+            } 
+            div.divCustomize{ 
+                position: fixed; 
+                background-color: #ffffff; 
+                left: 108px; 
+                top: 80px; 
+                opacity: 0.9; 
+                visibility: hidden; 
+            } 
+            body { 
+                font-family: "Candara"; 
+                font-size: 18px; 
+                background-color: #000000; 
+                background-size:1982px 1300px; 
+                background-repeat: no-repeat; 
+                color: #FFFFFF; 
+            } 
+            button{ 
+                background-image: -webkit-linear-gradient(top, #000000, #999999); 
+                border-radius: 6px; 
+                text-shadow: 2px 4px 4px #ffffff; 
+                font-family: Candara; 
+                color: #FFFFFF; 
+                font-size: 12x; 
+                padding: 1px 1px 1px 1px; 
+                border: solid #0a090a 1px; 
+                text-decoration: none; 
+            } 
+            button:hover { 
+                background: #ff0000; 
+                background-image: -webkit-linear-gradient(top, #ff0000, #ff7700); 
+                background-image: -moz-linear-gradient(top, #ff0000, #ff7700); 
+                background-image: -ms-linear-gradient(top, #ff0000, #ff7700); 
+                background-image: -o-linear-gradient(top, #ff0000, #ff7700); 
+                background-image: linear-gradient(to bottom, #ff0000, #ff7700); 
+                text-decoration: none; 
+            } 
+            input.red{ 
+                background-image: -webkit-linear-gradient(top, #8fd4ff, #3498db); 
+                border-radius: 36px; 
+                text-shadow: 2px 4px 4px #ffffff; 
+                font-family: Candara; 
+                color: #FFFFFF; 
+                font-size: 12x; 
+                padding: 4px 15px 4px 14px; 
+                border: solid #0a090a 1px; 
+                text-decoration: none; 
+            } 
+            input.red:hover { 
+               background-image: -webkit-linear-gradient(top, #8fd4ff, #3498db); 
+            } 
+            #areaScratch, #areaEpin{ 
+                resize:none; 
+            } 
+            #amount{ 
+                text-align: right; 
+            } 
+
+
+
+            .dropbtn {
+                  background-color: #4CAF50;
+                  color: white;
+                  padding: 16px;
+                  font-size: 16px;
+                  border: none;
+                  cursor: pointer;
+                }
+
+            .dropbtn:hover, .dropbtn:focus {
+                  background-color: #3e8e41;
+                }
+
+            #myInput {
+                /*  border-box: box-sizing;*/
+                  /*background-image: url('searchicon.png');*/
+               /*  background-position: 14px 12px;*/
+                /*  background-repeat: no-repeat;*/
+                  font-size: 16px;
+                  padding: 1px 1px 1px 1px;
+                  border: none;
+                  border-bottom: 1px solid #ddd;
+                  text-align: center;
+                  height: 25px;
+                }
+
+            #myInput:focus {outline: 3px solid #ddd;}
+
+            .dropdown {
+                  position: relative;
+                  display: inline-block;
+                }
+
+            .dropdown-content {
+                  display: none;
+                  position: absolute;
+                  left: 30px;
+                  top: -16px;
+                  background-color: #f6f6f6;
+                  min-width: 230px;
+                  width: 200px;
+                  overflow: auto;
+                  border: 1px solid #ddd;
+                  z-index: 1;
+
+                }
+
+            .dropdown-content a {
+                  color: black;
+                  padding: 3px 16px;
+                  text-decoration: none;
+                  display: block;
+              
+                }
+
+            .dropdown a:hover {background-color: #ddd;}
+
+            .show {display: block;}
+
+            input.reason{
+                    font-family: "Tahoma"; 
+                font-size: 10px ; 
+                height: 20px;
+            }
+
+              input.time{
+                    font-family: "Tahoma"; 
+                font-size: 10px ; 
+                height: 20px;
+           
+            }
+            
+        
+
+            p.other{
+
+                font-family: "Tahoma"; 
+                font-size: 13px ; 
+                height: 20px;
+                color: #000000;
+            }
+
+        </style> 
+
+<script src="moment.js"></script>
+<script src="moment-timezone.js"></script>
+<script src="moment-timezone-with-data.js"></script>
+<script src="moment-timezone-with-data-2012-2022.js"></script>
+
+    </head>
+
+    <body onload="fncOnload()">
+
+             <div class="divTime">
+                <center>
+
+                  
+              Select Time:
+             
+                <br>
+                <select id="selectTimeType" onchange="fncChange()"  style="width:110px;">
+                    <option value="Audi">Original ETA</option>
+                    <option value="Audi">Placed @</option>
+                    <option value="Audi">Compare 2 hours</option>
+                </select>
+
+<hr>
+                <input type="date" id="myDate" style="width:145px;" >
+                
+                
+<hr>
+                
+                <input  class="time" type="time" id="myTime"  style="width:85px;height:20px" >
+
+                <select id="selectTimeZone" >
+                    <option value="Audi">HST</option>
+                    <option value="Audi">AKDT</option>
+                    <option value="Audi">PDT</option>
+                    <option value="Audi">MST</option>
+                    <option value="Audi">MDT</option>
+                    <option value="Audi">CST</option>
+                    <option value="Audi">CDT</option>
+                    <option value="Audi">EDT</option>                   
+                </select>
+<hr>
+
+                <input type="date" id="myDat2" style="width:145px;" >
+<hr>
+                
+                <input  class="time" type="time" id="myTime2"  style="width:85px;height:20px" >
+<hr>
+
+                <button onclick="calcDifference()" type="button" style="width:60px;height:25px" >Calculate</button> 
+                <input  style="width:100px;height:20px" class="time" type="text" id="txtDiff" value="" placeholder="Time Difference" readonly />  
+
+                <p class="other" id="demo" ></p>
+             <!--   <p class="other" id="demo2" ></p> -->
+
+<hr>
+                <input  style="width:100px;height:20px" class="time" type="text" id="txtTime1" value=""  readonly />
+
+                <input  style="width:100px;height:20px" class="time" type="text" id="txtTime2" value=""  readonly />
+
+
+                <input  style="width:100px;height:20px" class="time" type="text" id="txtTime3" value=""  readonly />  
+
+                <input  style="width:100px;height:20px" class="time" type="text" id="txtTime4" value=""  readonly />
+
+                <input  style="width:100px;height:20px" class="time" type="text" id="txtTime5" value=""  readonly />        
+
+                <input  style="width:100px;height:20px" class="time" type="text" id="txtTime6" value=""  readonly />
+
+                <input  style="width:100px;height:20px" class="time" type="text" id="txtTime7" value=""  readonly />        
+
+                <input  style="width:100px;height:20px" class="time" type="text" id="txtTime8" value=""  readonly />                        
+                </center>
+                </div>
+
+         
+
+
+            
+                          
+          
+
+
+
+
+    <br> 
+
+
+
+        <script>
+
+        window.setInterval(function(){
+          myUpdate();
+        }, 1000);
+
+
+        function fncOnload(){
+        var date = new Date();
+
+        var day = date.getDate();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
+
+        if (month < 10) month = "0" + month;
+        if (day < 10) day = "0" + day;
+
+        var today = year + "-" + month + "-" + day;       
+        document.getElementById("myDate").value = today;
+        
+        document.getElementById("myTime").focus();
+
+        document.getElementById("selectTimeZone").selectedIndex = "7";
+
+        }
+        
+        function fncChange(){
+
+        
+        document.getElementById("myTime").focus();
+             
+    
+        }
+
+
+        function calcDifference(){
+
+        document.getElementById("demo").innerHTML = "";
+
+        // index of Time Zone
+        var indexTypeType = document.getElementById("selectTimeType").selectedIndex
+
+        // index of Time Zone
+        var indexTimeZone = document.getElementById("selectTimeZone").selectedIndex;
+
+        //Split the 
+        //  00:00   -  23.59 
+        var dateONE = document.getElementById("myTime").value;
+        //  12:00 am HST  - 11:59 pm HST
+        var dateTWO = document.getElementById("txtTime" + (parseInt(indexTimeZone) +1) ).value;
+
+        //                                  0  1 
+        var temp1 = dateONE.split(":"); // [15,30]
+        //temp1[0] = 15   |  temp1[1] = 30
+
+
+        //                                  0   1     
+        var temp2 = dateTWO.split(":"); // [04,11 pm HST]
+                                            //  0  1  2     
+        var temp2_1 = temp2[1].split(" "); // [11,pm,HST]
+
+        //temp2[0] = 04  |  temp2_1[0] = 11 | temp2_1[1] = pm
+
+
+        //base on temp2
+        var HOUR_AM_PM ;
+
+
+        //    pm
+        if (temp2_1[1] == "pm") {
+        //                              4                                
+                HOUR_AM_PM = parseInt(temp2[0]) + 12;
+
+                if (HOUR_AM_PM.length == 1) {
+
+                    HOUR_AM_PM = "0" + HOUR_AM_PM; 
+                }
+        }
+        else //am
+        {
+
+            HOUR_AM_PM = temp2[0];
+            // If 12 am = 00 hour
+            if (HOUR_AM_PM == 12) {
+                HOUR_AM_PM = "00";
+            }
+
+        }
+
+        //strings
+        var strMilHour1 = temp1[0];
+        var strMilHour2 = HOUR_AM_PM;
+
+        //ints
+        var theTime1 = parseInt(temp1[0])
+        var theTime2 = parseInt(HOUR_AM_PM)
+
+        //DATES 2
+        var date = [];
+
+
+         date[0] = moment().tz('Pacific/Honolulu').format("YYYY-MM-DD");
+         date[1] = moment().tz('America/Anchorage').format("YYYY-MM-DD");   //
+         date[2] = moment().tz('America/Los_Angeles').format("YYYY-MM-DD");   //
+         date[3] = moment().tz('America/Phoenix').format("YYYY-MM-DD");   //
+         date[4] = moment().tz('America/Denver').format("YYYY-MM-DD");   //
+         date[5] = moment().tz('America/Tegucigalpa').format("YYYY-MM-DD");   //
+         date[6] = moment().tz('America/Chicago').format("YYYY-MM-DD");   //
+         date[7] = moment().tz('America/New_York').format("YYYY-MM-DD");   //
+
+        var dateStr2 ;
+
+           dateStr2 =  date[indexTimeZone] + " " +  strMilHour2 + ":" + temp2_1[0]+ ":00";
+
+       
+        var dateStr1 = document.getElementById("myDate").value + " " + dateONE;
+ 
+
+        var date1 = moment( dateStr1 );
+        var date2 = moment( dateStr2 );
+
+        differenceInMs = date2.diff(date1); // diff yields milliseconds
+
+
+
+        duration = moment.duration(differenceInMs); 
+
+        // THISONE UP 
+        differenceInMinutes = duration.asMinutes(); // if you would like to have the output 559
+
+
+        var x = duration;
+
+
+        //PT24H // Late: 1 day
+
+        //P0D  //Same hour and minute
+
+        //PT1M  // Late: 1 minute
+        //PT1H  //Late: 1 hour
+        //PT1H1M  //Late: 1 hour and 1 minute
+
+        //-PT1H // On_Time: 1 hour
+        //-PT1M // On_Time: 1 minute
+        //-PT1H1M  //On_Time 1 hour and 1 minute
+
+        w = x.toString();
+        //
+        z =  x.toString();
+
+        var h = "0";
+        var m = "0";
+
+
+
+        var y = "";
+
+        if (w == "P0D")  // Same Time
+        {
+        y = "Same Time 'Late'";
+
+            // if Original ETA
+            if (indexTypeType == 0) 
+            {
+            document.getElementById("demo").innerHTML =   "Concession if Late: $0";
+
+            }
+            else if (indexTypeType == 1) //If Placed @
+            {
+             document.getElementById("demo").innerHTML = "Concession if Cancelled: $5";
+            }
+
+
+        //document.getElementById("demo2").innerHTML = "Concession if Late: $0";
+
+        }
+        else if(w.charAt(0) == "-") // On_Time
+        { 
+
+        w = w.replace("-", ""); 
+        w = w.replace("M", " M ");  
+        w = w.replace("H", " H ");
+        w = w.replace("PT", "");
+
+        y = "On Time by " + w;
+
+        }
+        else if(w.charAt(0) == "P"){ // LATE
+
+        // contains H
+        //z = PT1H1M
+        var charIndex = 1;
+        var charIndex2;
+
+        if (z.includes("H")) {
+             charIndex = z.indexOf("H"); 
+            h = z.substring(2, charIndex);
+        }
+
+
+        if (z.includes("M")) {
+            charIndex2 = z.indexOf("M"); 
+            m = z.substring(charIndex + 1, charIndex2);
+        }
+
+
+
+        // how many minutes late
+        var totalMinutes = (parseInt(h) * 60 ) + parseInt(m) ;
+
+        //alert (totalMinutes);
+
+        var CancelledCons;
+        if (totalMinutes <= 20) {
+
+        CancelledCons = "$5";
+        }
+        else if (totalMinutes <= 30){
+        CancelledCons = "$10";
+        }
+        else{
+        CancelledCons = "Full value of order up $25";
+
+        }
+
+        var LateCons;
+        if (totalMinutes <= 15) {
+
+        LateCons = "0";
+
+        }
+        else if (totalMinutes <= 45){
+
+        LateCons = "5";
+
+        }
+        else{
+
+        LateCons = "10";
+        }
+
+
+            // if Original ETA
+            if (indexTypeType == 0) 
+            {
+            document.getElementById("demo").innerHTML =   "Concession if Late: $" + LateCons;
+
+            }
+            else if (indexTypeType == 1) //If Placed @
+            {
+             document.getElementById("demo").innerHTML = "Concession if Cancelled: " + CancelledCons;
+            }
+
+  
+
+
+        w = w.replace("M", " M ");  
+        w = w.replace("H", " H ");
+        w = w.replace("PT", "");
+
+        y = "Late by " + w;
+        }
+
+
+
+
+
+
+        document.getElementById("txtDiff").value = y ;
+
+        }
+
+
+
+
+
+
+
+        function myUpdate() {
+
+        //format("YYYY-MM-DD");   
+        var time1 = moment().tz('Pacific/Honolulu').format("hh:mm a z");
+        var time2 = moment().tz('America/Anchorage').format("hh:mm a z");   //
+        var time3 = moment().tz('America/Los_Angeles').format("hh:mm a z");   //
+        var time4 = moment().tz('America/Phoenix').format("hh:mm a z");   //
+        var time5 = moment().tz('America/Denver').format("hh:mm a z");   //
+        var time6 = moment().tz('America/Tegucigalpa').format("hh:mm a z");   //
+        var time7 = moment().tz('America/Chicago').format("hh:mm a z");   //
+        var time8 = moment().tz('America/New_York').format("hh:mm a z");   //
+
+
+
+
+
+        //alert("FORMAT" + time1.toDate();
+
+
+        /*
+        Pacific/Honolulu
+        HST
+
+        America/Anchorage
+        AKDT
+
+        America/Los_Angeles
+        PDT
+
+        America/Phoenix
+        MST
+
+        America/Salt_Lake_City
+        MDT
+
+        America/Tegucigalpa
+        CST
+
+        America/Chicago
+        CDT
+
+        America/New_York
+        EDT
+
+
+
+
+
+        */
+
+
+
+           document.getElementById("txtTime1").value = time1  ;
+           document.getElementById("txtTime2").value = time2  ;
+           document.getElementById("txtTime3").value = time3  ;
+           document.getElementById("txtTime4").value = time4  ;
+           document.getElementById("txtTime5").value = time5  ;
+           document.getElementById("txtTime6").value = time6  ;
+           document.getElementById("txtTime7").value = time7  ;
+           document.getElementById("txtTime8").value = time8  ;
+
+
+
+
+
+
+        }
+
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+
+        }
+
+        function myFunction3() {
+        if (document.getElementById("myDropdown").classList.toggle("show")) {
+
+
+        }
+        else{
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+           
+         
+        }
+
+        function myFunction2(reason) {
+         //alert("Hola");
+         document.getElementById("myInput").value = reason;
+           document.getElementById("myDropdown").classList.toggle("show");
+
+           document.getElementById("areaEpin").focus();
+        }
+
+        function filterFunction() {
+          var input, filter, ul, li, a, i;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          div = document.getElementById("myDropdown");
+          a = div.getElementsByTagName("a");
+          for (i = 0; i < a.length; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              a[i].style.display = "";
+            } else {
+              a[i].style.display = "none";
+            }
+          }
+        }
+        </script>
+    </body>
+</html>
