@@ -449,14 +449,16 @@
             
                 <input type="date" id="myDate" style="width:145px;" >
                 <br>
+                <hr>
                 Select Time:
+             
                 <br>
                 <select id="selectTimeType"  style="width:110px;">
                     <option value="Audi">Original ETA</option>
                     <option value="Audi">Placed @</option>
                 </select>
                 <br>
-
+<hr>
                 
                 <input  class="time" type="time" id="myTime"  style="width:85px;height:20px" >
 
@@ -470,15 +472,15 @@
                     <option value="Audi">CDT</option>
                     <option value="Audi">EDT</option>                   
                 </select>
-
+<hr>
 
                 <button onclick="calcDifference()" type="button" style="width:60px;height:25px" >Calculate</button> 
                 <input  style="width:100px;height:20px" class="time" type="text" id="txtDiff" value="" placeholder="Time Difference" readonly />  
 
-                <p class="other" id="demo" > Consesion if Cancelled: $25</p>
-                <p class="other" id="demo2" > Consesion if Late: $10</p>
+                <p class="other" id="demo" ></p>
+             <!--   <p class="other" id="demo2" ></p> -->
 
-<br><br>
+<hr>
                 <input  style="width:100px;height:20px" class="time" type="text" id="txtTime1" value=""  readonly />
 
                 <input  style="width:100px;height:20px" class="time" type="text" id="txtTime2" value=""  readonly />
@@ -540,10 +542,12 @@ document.getElementById("myDate").value = today;
 
 function calcDifference(){
 
-
+document.getElementById("demo").innerHTML = "";
+//document.getElementById("demo2").innerHTML = "";
 
 // index of Time Zone
 var indexTypeType = document.getElementById("selectTimeType").selectedIndex
+
 
 // index of Time Zone
 var indexTimeZone = document.getElementById("selectTimeZone").selectedIndex;
@@ -712,7 +716,22 @@ var y = "";
 
 if (w == "P0D")  // Same Time
 {
-y = "Same Time";
+y = "Same Time 'Late'";
+
+	// if Original ETA
+	if (indexTypeType == 0) 
+	{
+	document.getElementById("demo").innerHTML =   "Consesion if Late: $0";
+
+	}
+	else if (indexTypeType == 1) //If Placed @
+	{
+	 document.getElementById("demo").innerHTML = "Consesion if Cancelled: $5";
+	}
+
+
+//document.getElementById("demo2").innerHTML = "Consesion if Late: $0";
+
 }
 else if(w.charAt(0) == "-") // On_Time
 { 
@@ -751,33 +770,48 @@ var totalMinutes = (parseInt(h) * 60 ) + parseInt(m) ;
 //alert (totalMinutes);
 
 var CancelledCons;
-if (totalMinutes <= 15) {
+if (totalMinutes <= 20) {
 
-
+CancelledCons = "$5";
 }
 else if (totalMinutes <= 30){
-
+CancelledCons = "$10";
 }
 else{
-
+CancelledCons = "Full value of order up $25";
 
 }
 
 var LateCons;
 if (totalMinutes <= 15) {
 
+LateCons = "0";
 
 }
-else if (totalMinutes <= 30){
+else if (totalMinutes <= 45){
+
+LateCons = "5";
 
 }
 else{
 
-
+LateCons = "10";
 }
 
-document.getElementById("demo").innerHTML = "Consesion if Cancelled: $" + CancelledCons;
-document.getElementById("demo2").innerHTML = "Consesion if Late: $" + LateCons;
+
+	// if Original ETA
+	if (indexTypeType == 0) 
+	{
+	document.getElementById("demo").innerHTML =   "Consesion if Late: $" + LateCons;
+
+	}
+	else if (indexTypeType == 1) //If Placed @
+	{
+	 document.getElementById("demo").innerHTML = "Consesion if Cancelled: " + CancelledCons;
+	}
+
+//document.getElementById("demo").innerHTML = "Consesion if Cancelled: " + CancelledCons;
+//document.getElementById("demo2").innerHTML = "Consesion if Late: $" + LateCons;
 
 
 w = w.replace("M", " M ");	
