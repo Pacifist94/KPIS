@@ -11,9 +11,39 @@
                     background-image: -webkit-linear-gradient(top, #00cc44, #ccffdd); 
                 opacity:0.85; 
                 width: 165px; 
-                height: 410px; 
+                height: 55px; 
                 position: fixed;
                 left: 0px;
+                top: 0px;
+            } 
+
+            div.divTime2{ 
+
+                    background-image: -webkit-linear-gradient(top, #00cc44, #ccffdd); 
+                opacity:0.85; 
+                width: 165px; 
+                height: 210px; 
+                position: fixed;
+                left: 200px;
+                top: 0px;
+            } 
+
+                  div.divTime3{ 
+                    background-image: -webkit-linear-gradient(top, #00cc44, #ccffdd); 
+                opacity:0.85; 
+                width: 165px; 
+                height: 80px; 
+                position: fixed;
+                left: 400px;
+                top: 0px;
+            } 
+                 div.divTime4{ 
+                    background-image: -webkit-linear-gradient(top, #00cc44, #ccffdd); 
+                opacity:0.85; 
+                width: 165px; 
+                height: 245px; 
+                position: fixed;
+                left: 600px;
                 top: 0px;
             } 
 
@@ -314,13 +344,13 @@
             }
 
               input.time{
+
                     font-family: "Tahoma"; 
                 font-size: 10px ; 
                 height: 20px;
            
             }
-            
-        
+
 
             p.other{
 
@@ -328,6 +358,18 @@
                 font-size: 13px ; 
                 height: 20px;
                 color: #000000;
+            }            
+        
+
+            p.other2{
+                padding: 0px;
+                margin: 1px;
+
+                font-family: "Tahoma"; 
+                font-size: 13px ; 
+                height: 20px;
+                color: #FFFFFF;
+
             }
 
         </style> 
@@ -341,7 +383,7 @@
 
     <body onload="fncOnload()">
 
-             <div class="divTime">
+             <div class="divTime" id="divTime">
                 <center>
 
                   
@@ -355,7 +397,26 @@
                 </select>
 
 <hr>
-                <input type="date" id="myDate" style="width:145px;" >
+       
+</div>
+ <div class="divTime2"  id="divTime2">
+    <p class="other2">Date 1:</p>
+                <input type="date" id="myDate2" style="width:145px;" >
+    <p class="other2">Time 1:</p>
+                <input  class="time" type="time" id="myTime2"  style="width:85px;height:20px" >
+<hr>
+    <p class="other2">Date 2:</p>
+
+               <input type="date" id="myDate3" style="width:145px;" >
+<p class="other2">Time 2:</p>
+                
+                <input  class="time" type="time" id="myTime3"  style="width:85px;height:20px" >
+<hr>
+
+</div>
+<div class="divTime3"  id="divTime3">
+
+             <input type="date" id="myDate" style="width:145px;" >
                 
                 
 <hr>
@@ -374,12 +435,8 @@
                 </select>
 <hr>
 
-                <input type="date" id="myDat2" style="width:145px;" >
-<hr>
-                
-                <input  class="time" type="time" id="myTime2"  style="width:85px;height:20px" >
-<hr>
-
+</div>
+<div class="divTime4"  id="divTime4">
                 <button onclick="calcDifference()" type="button" style="width:60px;height:25px" >Calculate</button> 
                 <input  style="width:100px;height:20px" class="time" type="text" id="txtDiff" value="" placeholder="Time Difference" readonly />  
 
@@ -428,6 +485,11 @@
 
 
         function fncOnload(){
+
+
+        //call change 
+        fncChange();    
+
         var date = new Date();
 
         var day = date.getDate();
@@ -439,7 +501,11 @@
 
         var today = year + "-" + month + "-" + day;       
         document.getElementById("myDate").value = today;
+        document.getElementById("myDate2").value = today;
+        document.getElementById("myDate3").value = today;
         
+        
+
         document.getElementById("myTime").focus();
 
         document.getElementById("selectTimeZone").selectedIndex = "7";
@@ -448,8 +514,73 @@
         
         function fncChange(){
 
+        var indexTypeType = document.getElementById("selectTimeType").selectedIndex
+
+        if (indexTypeType == 0 ) {
+
+        document.getElementById("divTime2").style.visibility= "hidden";    
+        document.getElementById("divTime3").style.visibility= "hidden";    
+        document.getElementById("divTime4").style.visibility= "hidden";    
+
+
+        document.getElementById("divTime3").style.visibility= "visible";    
+        document.getElementById("divTime4").style.visibility= "visible";    
+
+        document.getElementById("divTime3").style.left = "0px";
+        document.getElementById("divTime3").style.top = "55px";
+
+        document.getElementById("divTime4").style.left = "0px";
+        document.getElementById("divTime4").style.top = "135px";
+
+        document.getElementById("myTime").focus();    
+
+
+
+
+        }
+        else if(indexTypeType ==1){
+        document.getElementById("divTime2").style.visibility= "hidden";    
+        document.getElementById("divTime3").style.visibility= "hidden";    
+        document.getElementById("divTime4").style.visibility= "hidden";    
+
+
+        document.getElementById("divTime3").style.visibility= "visible";    
+        document.getElementById("divTime4").style.visibility= "visible";    
+
+
+        document.getElementById("divTime3").style.left = "0px";
+        document.getElementById("divTime3").style.top = "55px";
+
+        document.getElementById("divTime4").style.left = "0px";
+        document.getElementById("divTime4").style.top = "135px";
+
+        document.getElementById("myTime").focus();    
+        }
+        else if (indexTypeType ==2) {
+        document.getElementById("divTime2").style.visibility= "hidden";    
+        document.getElementById("divTime3").style.visibility= "hidden";    
+        document.getElementById("divTime4").style.visibility= "hidden";   
+
+
+        document.getElementById("divTime2").style.visibility= "visible";    
+        document.getElementById("divTime4").style.visibility= "visible"; 
+
+        document.getElementById("divTime2").style.left = "0px";
+        document.getElementById("divTime2").style.top = document.getElementById('divTime').offsetHeight;
+
+        document.getElementById("divTime4").style.left = "0px";
+        document.getElementById("divTime4").style.top = "265px"; 
+
+        document.getElementById("myTime2").focus();    
+
+alert(document.getElementById('divTime').offsetHeight);
+alert(document.getElementById('divTime2').offsetHeight);
+alert(document.getElementById('divTime3').offsetHeight);
+alert(document.getElementById('divTime4').offsetHeight);
+
+        }
+
         
-        document.getElementById("myTime").focus();
              
     
         }
@@ -459,7 +590,7 @@
 
         document.getElementById("demo").innerHTML = "";
 
-        // index of Time Zone
+        // index of Time Type
         var indexTypeType = document.getElementById("selectTimeType").selectedIndex
 
         // index of Time Zone
