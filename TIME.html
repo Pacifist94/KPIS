@@ -8,6 +8,10 @@
             } 
 
             div.divTime{ 
+                           padding-bottom: 5px;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    padding-top: 5px;
                     background-image: -webkit-linear-gradient(top, #00cc44, #ccffdd); 
                 opacity:0.85; 
                 width: 165px; 
@@ -18,6 +22,10 @@
             } 
 
             div.divTime2{ 
+                      padding-bottom: 5px;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    padding-top: 5px;
 
                     background-image: -webkit-linear-gradient(top, #00cc44, #ccffdd); 
                 opacity:0.85; 
@@ -29,15 +37,24 @@
             } 
 
                   div.divTime3{ 
+
+                               padding-bottom: 5px;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    padding-top: 5px;
                     background-image: -webkit-linear-gradient(top, #00cc44, #ccffdd); 
                 opacity:0.85; 
                 width: 165px; 
-                height: 80px; 
+                height: 100px; 
                 position: fixed;
                 left: 400px;
                 top: 0px;
             } 
                  div.divTime4{ 
+                               padding-bottom: 5px;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    padding-top: 5px;
                     background-image: -webkit-linear-gradient(top, #00cc44, #ccffdd); 
                 opacity:0.85; 
                 width: 165px; 
@@ -48,6 +65,8 @@
             } 
 
             input{ 
+              
+
                 font-family: "Tahoma"; 
                 font-size: 15px; 
             } 
@@ -385,93 +404,75 @@
 
              <div class="divTime" id="divTime">
                 <center>
-
-                  
-              Select Time:
-             
-                <br>
-                <select id="selectTimeType" onchange="fncChange()"  style="width:110px;">
-                    <option value="Audi">Original ETA</option>
-                    <option value="Audi">Placed @</option>
-                    <option value="Audi">Compare 2 hours</option>
-                </select>
-
-<hr>
-       
-</div>
- <div class="divTime2"  id="divTime2">
-    <p class="other2">Date 1:</p>
-                <input type="date" id="myDate2" style="width:145px;" >
-    <p class="other2">Time 1:</p>
-                <input  class="time" type="time" id="myTime2"  style="width:85px;height:20px" >
-<hr>
-    <p class="other2">Date 2:</p>
-
-               <input type="date" id="myDate3" style="width:145px;" >
-<p class="other2">Time 2:</p>
-                
-                <input  class="time" type="time" id="myTime3"  style="width:85px;height:20px" >
-<hr>
-
-</div>
-<div class="divTime3"  id="divTime3">
-
-             <input type="date" id="myDate" style="width:145px;" >
-                
-                
-<hr>
-                
-                <input  class="time" type="time" id="myTime"  style="width:85px;height:20px" >
-
-                <select id="selectTimeZone" >
-                    <option value="Audi">HST</option>
-                    <option value="Audi">AKDT</option>
-                    <option value="Audi">PDT</option>
-                    <option value="Audi">MST</option>
-                    <option value="Audi">MDT</option>
-                    <option value="Audi">CST</option>
-                    <option value="Audi">CDT</option>
-                    <option value="Audi">EDT</option>                   
-                </select>
-<hr>
-
-</div>
-<div class="divTime4"  id="divTime4">
-                <button onclick="calcDifference()" type="button" style="width:60px;height:25px" >Calculate</button> 
-                <input  style="width:100px;height:20px" class="time" type="text" id="txtDiff" value="" placeholder="Time Difference" readonly />  
-
-                <p class="other" id="demo" ></p>
-             <!--   <p class="other" id="demo2" ></p> -->
-
-<hr>
-                <input  style="width:100px;height:20px" class="time" type="text" id="txtTime1" value=""  readonly />
-
-                <input  style="width:100px;height:20px" class="time" type="text" id="txtTime2" value=""  readonly />
-
-
-                <input  style="width:100px;height:20px" class="time" type="text" id="txtTime3" value=""  readonly />  
-
-                <input  style="width:100px;height:20px" class="time" type="text" id="txtTime4" value=""  readonly />
-
-                <input  style="width:100px;height:20px" class="time" type="text" id="txtTime5" value=""  readonly />        
-
-                <input  style="width:100px;height:20px" class="time" type="text" id="txtTime6" value=""  readonly />
-
-                <input  style="width:100px;height:20px" class="time" type="text" id="txtTime7" value=""  readonly />        
-
-                <input  style="width:100px;height:20px" class="time" type="text" id="txtTime8" value=""  readonly />                        
+                  Select Time:
+                    <br>
+                    <select id="selectTimeType" onchange="fncChange()"  style="width:110px;">
+                        <option value="Audi">Original ETA</option>
+                        <option value="Audi">Placed @</option>
+                        <option value="Audi">Compare 2 hours</option>
+                    </select>
                 </center>
-                </div>
+            </div>
 
-         
+            <div class="divTime2"  id="divTime2">
+                <center>
+                    <p class="other2">Date 1:</p>
+                    <input type="date" id="myDate2" style="width:145px;" >
+                    <p class="other2">Time 1:</p>
+                    <input  class="time" type="time" id="myTime2"  style="width:85px;height:20px" >
+                    <hr>
+                    <p class="other2">Date 2:</p>
 
+                    <input type="date" id="myDate3" style="width:145px;" >
+                    <p class="other2">Time 2:</p>
+                    <input  class="time" type="time" id="myTime3"  style="width:85px;height:20px" >
+                </center>
+            </div>
 
-            
-                          
-          
+            <div class="divTime3"  id="divTime3">
+                <center>
+                    <p class="other2">Date:</p>
+                    <input type="date" id="myDate" style="width:145px;" >
+                    <p class="other2">Time:</p>
+                    <input  class="time" type="time" id="myTime"  style="width:85px;height:20px" >
+                    <select id="selectTimeZone" >
+                        <option value="Audi">HST</option>
+                        <option value="Audi">AKDT</option>
+                        <option value="Audi">PDT</option>
+                        <option value="Audi">MST</option>
+                        <option value="Audi">MDT</option>
+                        <option value="Audi">CST</option>
+                        <option value="Audi">CDT</option>
+                        <option value="Audi">EDT</option>                   
+                    </select>
+                </center>
+            </div>
 
+            <div class="divTime4"  id="divTime4">
+                <center>
+                        <button onclick="calcDifference()" type="button" style="width:60px;height:25px" >Calculate</button> 
+                        <input  style="width:100px;height:20px" class="time" type="text" id="txtDiff" value="" placeholder="Time Difference" readonly />  
 
+                        <p class="other" id="demo" ></p>
+                     
+                        <hr>
+                        <input  style="width:100px;height:20px" class="time" type="text" id="txtTime1" value=""  readonly />
 
+                        <input  style="width:100px;height:20px" class="time" type="text" id="txtTime2" value=""  readonly />
+
+                        <input  style="width:100px;height:20px" class="time" type="text" id="txtTime3" value=""  readonly />  
+
+                        <input  style="width:100px;height:20px" class="time" type="text" id="txtTime4" value=""  readonly />
+
+                        <input  style="width:100px;height:20px" class="time" type="text" id="txtTime5" value=""  readonly />        
+
+                        <input  style="width:100px;height:20px" class="time" type="text" id="txtTime6" value=""  readonly />
+
+                        <input  style="width:100px;height:20px" class="time" type="text" id="txtTime7" value=""  readonly />        
+
+                        <input  style="width:100px;height:20px" class="time" type="text" id="txtTime8" value=""  readonly />                        
+                </center>
+            </div>
 
     <br> 
 
@@ -516,6 +517,18 @@
 
         var indexTypeType = document.getElementById("selectTimeType").selectedIndex
 
+
+var measure1 = document.getElementById('divTime').offsetHeight;
+var measure2 = document.getElementById('divTime2').offsetHeight;
+var measure3 = document.getElementById('divTime3').offsetHeight;
+var measure4 = document.getElementById('divTime4').offsetHeight;
+// 55
+// 210
+// 80
+// 245
+
+
+
         if (indexTypeType == 0 ) {
 
         document.getElementById("divTime2").style.visibility= "hidden";    
@@ -527,10 +540,10 @@
         document.getElementById("divTime4").style.visibility= "visible";    
 
         document.getElementById("divTime3").style.left = "0px";
-        document.getElementById("divTime3").style.top = "55px";
+        document.getElementById("divTime3").style.top =measure1;
 
         document.getElementById("divTime4").style.left = "0px";
-        document.getElementById("divTime4").style.top = "135px";
+        document.getElementById("divTime4").style.top = parseInt(measure1) + parseInt(measure3) ;
 
         document.getElementById("myTime").focus();    
 
@@ -549,10 +562,10 @@
 
 
         document.getElementById("divTime3").style.left = "0px";
-        document.getElementById("divTime3").style.top = "55px";
+        document.getElementById("divTime3").style.top = measure1
 
         document.getElementById("divTime4").style.left = "0px";
-        document.getElementById("divTime4").style.top = "135px";
+        document.getElementById("divTime4").style.top = parseInt(measure1) + parseInt(measure3) ;
 
         document.getElementById("myTime").focus();    
         }
@@ -566,18 +579,19 @@
         document.getElementById("divTime4").style.visibility= "visible"; 
 
         document.getElementById("divTime2").style.left = "0px";
-        document.getElementById("divTime2").style.top = document.getElementById('divTime').offsetHeight;
+        document.getElementById("divTime2").style.top = measure1;
 
         document.getElementById("divTime4").style.left = "0px";
-        document.getElementById("divTime4").style.top = "265px"; 
+        document.getElementById("divTime4").style.top = parseInt(measure1) + parseInt(measure2);
 
         document.getElementById("myTime2").focus();    
 
-alert(document.getElementById('divTime').offsetHeight);
-alert(document.getElementById('divTime2').offsetHeight);
-alert(document.getElementById('divTime3').offsetHeight);
-alert(document.getElementById('divTime4').offsetHeight);
 
+
+// 55
+// 210
+// 80
+// 245
         }
 
         
@@ -590,10 +604,15 @@ alert(document.getElementById('divTime4').offsetHeight);
 
         document.getElementById("demo").innerHTML = "";
 
+
         // index of Time Type
         var indexTypeType = document.getElementById("selectTimeType").selectedIndex
 
-        // index of Time Zone
+
+if (indexTypeType == 0 || indexTypeType == 1 )  // 0 | 1
+{
+ //   alert("First or Second");
+ // index of Time Zone
         var indexTimeZone = document.getElementById("selectTimeZone").selectedIndex;
 
         //Split the 
@@ -671,6 +690,8 @@ alert(document.getElementById('divTime4').offsetHeight);
 
         var date1 = moment( dateStr1 );
         var date2 = moment( dateStr2 );
+
+
 
         differenceInMs = date2.diff(date1); // diff yields milliseconds
 
@@ -813,18 +834,161 @@ alert(document.getElementById('divTime4').offsetHeight);
 
         y = "Late by " + w;
         }
-
-
-
-
-
-
         document.getElementById("txtDiff").value = y ;
+}
+else{ // 2
+
+
+calcDifference2();
+
+}
+       
 
         }
 
 
+ function calcDifference2(){
 
+        document.getElementById("demo").innerHTML = "";
+
+        //Split the 
+        //  00:00   -  23.59 
+        var dateONE = document.getElementById("myTime2").value;
+        //  12:00 am HST  - 11:59 pm HST
+        var dateTWO = document.getElementById("myTime3").value;
+
+    var dateStr1 = document.getElementById("myDate2").value + " " + dateONE;
+ 
+    var dateStr2 = document.getElementById("myDate3").value + " " + dateTWO;
+ 
+
+        //DATES 
+        var date1 = moment( dateStr1 );
+        var date2 = moment( dateStr2 );
+
+
+        differenceInMs = date2.diff(date1); // diff yields milliseconds
+
+        duration = moment.duration(differenceInMs); 
+
+        // THISONE UP 
+        differenceInMinutes = duration.asMinutes(); // if you would like to have the output 559
+
+
+        var x = duration;
+
+
+
+ w = x.toString();
+        //
+        z =  x.toString();
+
+        var h = "0";
+        var m = "0";
+
+
+
+        var y = "";
+
+        if (w == "P0D")  // Same Time
+        {
+        y = "Same Time 'Late'";
+
+            // if Original ETA
+            if (indexTypeType == 0) 
+            {
+            document.getElementById("demo").innerHTML =   "Concession if Late: $0";
+
+            }
+            else if (indexTypeType == 1) //If Placed @
+            {
+             document.getElementById("demo").innerHTML = "Concession if Cancelled: $5";
+            }
+
+
+        //document.getElementById("demo2").innerHTML = "Concession if Late: $0";
+
+        }
+        else if(w.charAt(0) == "-") // On_Time
+        { 
+
+        w = w.replace("-", ""); 
+        w = w.replace("M", " M ");  
+        w = w.replace("H", " H ");
+        w = w.replace("PT", "");
+
+        y = "On Time by " + w;
+
+        }
+        else if(w.charAt(0) == "P"){ // LATE
+
+        // contains H
+        //z = PT1H1M
+        var charIndex = 1;
+        var charIndex2;
+
+        if (z.includes("H")) {
+             charIndex = z.indexOf("H"); 
+            h = z.substring(2, charIndex);
+        }
+
+
+        if (z.includes("M")) {
+            charIndex2 = z.indexOf("M"); 
+            m = z.substring(charIndex + 1, charIndex2);
+        }
+
+
+
+        // how many minutes late
+        var totalMinutes = (parseInt(h) * 60 ) + parseInt(m) ;
+
+        //alert (totalMinutes);
+
+        var CancelledCons;
+        if (totalMinutes <= 20) {
+
+        CancelledCons = "$5";
+        }
+        else if (totalMinutes <= 30){
+        CancelledCons = "$10";
+        }
+        else{
+        CancelledCons = "Full value of order up $25";
+
+        }
+
+        var LateCons;
+        if (totalMinutes <= 15) {
+
+        LateCons = "0";
+
+        }
+        else if (totalMinutes <= 45){
+
+        LateCons = "5";
+
+        }
+        else{
+
+        LateCons = "10";
+        }
+
+
+     
+  
+
+
+        w = w.replace("M", " M ");  
+        w = w.replace("H", " H ");
+        w = w.replace("PT", "");
+
+        y = "Late by " + w;
+        }
+        document.getElementById("txtDiff").value = y ;
+        //document.getElementById("txtDiff").value = x ;
+
+        }
 
 
 
