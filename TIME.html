@@ -225,11 +225,6 @@
                         <input  style="width:100px;height:20px" class="time" type="text" id="txtTime8" value=""  readonly />                        
                 </center>
             </div>
-
-    <br> 
-
-
-
         <script>
 
         window.setInterval(function(){
@@ -237,565 +232,472 @@
         }, 1000);
 
 
-        function fncOnload(){
 
+        function fncOnload()
+        {
+            //Call change of Dropdown
+            fncChange();    
 
-        //call change 
-        fncChange();    
+            var date = new Date();
 
-        var date = new Date();
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
 
-        var day = date.getDate();
-        var month = date.getMonth() + 1;
-        var year = date.getFullYear();
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
 
-        if (month < 10) month = "0" + month;
-        if (day < 10) day = "0" + day;
-
-        var today = year + "-" + month + "-" + day;       
-        document.getElementById("myDate").value = today;
-        document.getElementById("myDate2").value = today;
-        document.getElementById("myDate3").value = today;
-        
-        
-
-        document.getElementById("myTime").focus();
-
-        document.getElementById("selectTimeZone").selectedIndex = "7";
-
+            var today = year + "-" + month + "-" + day;       
+            document.getElementById("myDate").value = today;
+            document.getElementById("myDate2").value = today;
+            document.getElementById("myDate3").value = today;
+            
+            document.getElementById("myTime").focus();
+            document.getElementById("selectTimeZone").selectedIndex = "7";
         }
         
-        function fncChange(){
+        function fncChange()
+        {
+            var indexTypeType = document.getElementById("selectTimeType").selectedIndex
 
-        var indexTypeType = document.getElementById("selectTimeType").selectedIndex
+            var measure1 = document.getElementById('divTime').offsetHeight;
+            var measure2 = document.getElementById('divTime2').offsetHeight;
+            var measure3 = document.getElementById('divTime3').offsetHeight;
+            var measure4 = document.getElementById('divTime4').offsetHeight;
 
+            if (indexTypeType == 0 ) {
 
-var measure1 = document.getElementById('divTime').offsetHeight;
-var measure2 = document.getElementById('divTime2').offsetHeight;
-var measure3 = document.getElementById('divTime3').offsetHeight;
-var measure4 = document.getElementById('divTime4').offsetHeight;
-// 55
-// 210
-// 80
-// 245
+                document.getElementById("divTime2").style.visibility= "hidden";    
+                document.getElementById("divTime3").style.visibility= "hidden";    
+                document.getElementById("divTime4").style.visibility= "hidden";    
 
+                document.getElementById("divTime3").style.visibility= "visible";    
+                document.getElementById("divTime4").style.visibility= "visible";    
 
+                document.getElementById("divTime3").style.left = "0px";
+                document.getElementById("divTime3").style.top =measure1;
 
-        if (indexTypeType == 0 ) {
+                document.getElementById("divTime4").style.left = "0px";
+                document.getElementById("divTime4").style.top = parseInt(measure1) + parseInt(measure3) ;
 
-        document.getElementById("divTime2").style.visibility= "hidden";    
-        document.getElementById("divTime3").style.visibility= "hidden";    
-        document.getElementById("divTime4").style.visibility= "hidden";    
+                document.getElementById("myTime").focus();    
+            }
+            else if(indexTypeType == 1){
+                document.getElementById("divTime2").style.visibility= "hidden";    
+                document.getElementById("divTime3").style.visibility= "hidden";    
+                document.getElementById("divTime4").style.visibility= "hidden";    
 
+                document.getElementById("divTime3").style.visibility= "visible";    
+                document.getElementById("divTime4").style.visibility= "visible";    
 
-        document.getElementById("divTime3").style.visibility= "visible";    
-        document.getElementById("divTime4").style.visibility= "visible";    
+                document.getElementById("divTime3").style.left = "0px";
+                document.getElementById("divTime3").style.top = measure1
 
-        document.getElementById("divTime3").style.left = "0px";
-        document.getElementById("divTime3").style.top =measure1;
+                document.getElementById("divTime4").style.left = "0px";
+                document.getElementById("divTime4").style.top = parseInt(measure1) + parseInt(measure3) ;
 
-        document.getElementById("divTime4").style.left = "0px";
-        document.getElementById("divTime4").style.top = parseInt(measure1) + parseInt(measure3) ;
+                document.getElementById("myTime").focus();    
+            }
+            else if (indexTypeType == 2) 
+            {
+                document.getElementById("divTime2").style.visibility= "hidden";    
+                document.getElementById("divTime3").style.visibility= "hidden";    
+                document.getElementById("divTime4").style.visibility= "hidden";   
 
-        document.getElementById("myTime").focus();    
+                document.getElementById("divTime2").style.visibility= "visible";    
+                document.getElementById("divTime4").style.visibility= "visible"; 
 
+                document.getElementById("divTime2").style.left = "0px";
+                document.getElementById("divTime2").style.top = measure1;
 
+                document.getElementById("divTime4").style.left = "0px";
+                document.getElementById("divTime4").style.top = parseInt(measure1) + parseInt(measure2);
 
-
-        }
-        else if(indexTypeType ==1){
-        document.getElementById("divTime2").style.visibility= "hidden";    
-        document.getElementById("divTime3").style.visibility= "hidden";    
-        document.getElementById("divTime4").style.visibility= "hidden";    
-
-
-        document.getElementById("divTime3").style.visibility= "visible";    
-        document.getElementById("divTime4").style.visibility= "visible";    
-
-
-        document.getElementById("divTime3").style.left = "0px";
-        document.getElementById("divTime3").style.top = measure1
-
-        document.getElementById("divTime4").style.left = "0px";
-        document.getElementById("divTime4").style.top = parseInt(measure1) + parseInt(measure3) ;
-
-        document.getElementById("myTime").focus();    
-        }
-        else if (indexTypeType ==2) {
-        document.getElementById("divTime2").style.visibility= "hidden";    
-        document.getElementById("divTime3").style.visibility= "hidden";    
-        document.getElementById("divTime4").style.visibility= "hidden";   
-
-
-        document.getElementById("divTime2").style.visibility= "visible";    
-        document.getElementById("divTime4").style.visibility= "visible"; 
-
-        document.getElementById("divTime2").style.left = "0px";
-        document.getElementById("divTime2").style.top = measure1;
-
-        document.getElementById("divTime4").style.left = "0px";
-        document.getElementById("divTime4").style.top = parseInt(measure1) + parseInt(measure2);
-
-        document.getElementById("myTime2").focus();    
-
-
-
-// 55
-// 210
-// 80
-// 245
-        }
-
-        
-             
-    
+                document.getElementById("myTime2").focus();    
+            }
         }
 
 
-        function calcDifference(){
+        function calcDifference()
+        {
 
-        document.getElementById("demo").innerHTML = "";
+            document.getElementById("demo").innerHTML = "";
 
-
-        // index of Time Type
-        var indexTypeType = document.getElementById("selectTimeType").selectedIndex
-
-
-if (indexTypeType == 0 || indexTypeType == 1 )  // 0 | 1
-{
- //   alert("First or Second");
- // index of Time Zone
-        var indexTimeZone = document.getElementById("selectTimeZone").selectedIndex;
-
-        //Split the 
-        //  00:00   -  23.59 
-        var dateONE = document.getElementById("myTime").value;
-        //  12:00 am HST  - 11:59 pm HST
-        var dateTWO = document.getElementById("txtTime" + (parseInt(indexTimeZone) +1) ).value;
-
-        //                                  0  1 
-        var temp1 = dateONE.split(":"); // [15,30]
-        //temp1[0] = 15   |  temp1[1] = 30
+            // index of Time Type
+            var indexTypeType = document.getElementById("selectTimeType").selectedIndex
 
 
-        //                                  0   1     
-        var temp2 = dateTWO.split(":"); // [04,11 pm HST]
-                                            //  0  1  2     
-        var temp2_1 = temp2[1].split(" "); // [11,pm,HST]
+            if (indexTypeType == 0 || indexTypeType == 1 )  // 0 | 1
+            {
+          
+                // index of Time Zone
+                var indexTimeZone = document.getElementById("selectTimeZone").selectedIndex;
 
-        //temp2[0] = 04  |  temp2_1[0] = 11 | temp2_1[1] = pm
+                //Split the 
+                //  00:00   -  23.59 
+                var dateONE = document.getElementById("myTime").value;
+                //  12:00 am HST  - 11:59 pm HST
+                var dateTWO = document.getElementById("txtTime" + (parseInt(indexTimeZone) +1) ).value;
+
+                //                                  0  1 
+                var temp1 = dateONE.split(":"); // [15,30]
+                //temp1[0] = 15   |  temp1[1] = 30
 
 
-        //base on temp2
-        var HOUR_AM_PM ;
+                //                                  0   1     
+                var temp2 = dateTWO.split(":"); // [04,11 pm HST]
+                                                   //  0  1  2     
+                var temp2_1 = temp2[1].split(" "); // [11,pm,HST]
+
+                //temp2[0] = 04  |  temp2_1[0] = 11 | temp2_1[1] = pm
 
 
-        //    pm
-        if (temp2_1[1] == "pm") {
-        //                              4                                
-                HOUR_AM_PM = parseInt(temp2[0]) + 12;
+                //base on temp2
+                var HOUR_AM_PM ;
 
-                if (HOUR_AM_PM.length == 1) {
+                //    pm
+                if (temp2_1[1] == "pm") 
+                {
+                    //                              4                                
+                    HOUR_AM_PM = parseInt(temp2[0]) + 12;
 
-                    HOUR_AM_PM = "0" + HOUR_AM_PM; 
+                    if (HOUR_AM_PM.length == 1) 
+                    {
+
+                        HOUR_AM_PM = "0" + HOUR_AM_PM; 
+                    }
                 }
+                else //am
+                {
+                    HOUR_AM_PM = temp2[0];
+                    // If 12 am = 00 hour
+                    if (HOUR_AM_PM == 12) 
+                    {
+                        HOUR_AM_PM = "00";
+                    }
+                }
+
+                //strings
+                var strMilHour1 = temp1[0];
+                var strMilHour2 = HOUR_AM_PM;
+
+                //ints
+                var theTime1 = parseInt(temp1[0])
+                var theTime2 = parseInt(HOUR_AM_PM)
+
+                //DATES 2
+                var date = [];
+
+                date[0] = moment().tz('Pacific/Honolulu').format("YYYY-MM-DD");
+                date[1] = moment().tz('America/Anchorage').format("YYYY-MM-DD");   //
+                date[2] = moment().tz('America/Los_Angeles').format("YYYY-MM-DD");   //
+                date[3] = moment().tz('America/Phoenix').format("YYYY-MM-DD");   //
+                date[4] = moment().tz('America/Denver').format("YYYY-MM-DD");   //
+                date[5] = moment().tz('America/Tegucigalpa').format("YYYY-MM-DD");   //
+                date[6] = moment().tz('America/Chicago').format("YYYY-MM-DD");   //
+                date[7] = moment().tz('America/New_York').format("YYYY-MM-DD");   //
+
+                var dateStr2 ;
+
+                dateStr2 =  date[indexTimeZone] + " " +  strMilHour2 + ":" + temp2_1[0]+ ":00";
+
+                var dateStr1 = document.getElementById("myDate").value + " " + dateONE;
+             
+                var date1 = moment( dateStr1 );
+                var date2 = moment( dateStr2 );
+
+                differenceInMs = date2.diff(date1); // diff yields milliseconds
+
+                duration = moment.duration(differenceInMs); 
+
+                // THISONE UP 
+                differenceInMinutes = duration.asMinutes(); // if you would like to have the output 559
+
+
+                var x = duration;
+
+                //PT24H // Late: 1 day
+                
+                //P0D  //Same hour and minute
+                
+                //PT1M  // Late: 1 minute
+                //PT1H  //Late: 1 hour
+                //PT1H1M  //Late: 1 hour and 1 minute
+
+                //-PT1H // On_Time: 1 hour
+                //-PT1M // On_Time: 1 minute
+                //-PT1H1M  //On_Time 1 hour and 1 minute
+
+                w = x.toString();
+                
+                z =  x.toString();
+
+                var h = "0";
+                var m = "0";
+
+                var y = "";
+
+                if (w == "P0D")  // Same Time
+                {
+                    y = "Same Time 'Late'";
+
+                    // if Original ETA
+                    if (indexTypeType == 0) 
+                    {
+                        document.getElementById("demo").innerHTML =   "Concession if Late: $0";
+
+                    }
+                    else if (indexTypeType == 1) //If Placed @
+                    {
+                        document.getElementById("demo").innerHTML = "Concession if Cancelled: $5";
+                    }
+                }
+                else if(w.charAt(0) == "-") // On_Time
+                { 
+                    w = w.replace("-", ""); 
+                    w = w.replace("M", " M ");  
+                    w = w.replace("H", " H ");
+                    w = w.replace("PT", "");
+
+                    y = "On Time by " + w;
+                }
+                else if(w.charAt(0) == "P")// LATE
+                {   
+                    
+                    // contains H
+                    //z = PT1H1M
+                    var charIndex = 1;
+                    var charIndex2;
+
+                    if (z.includes("H")) 
+                    {
+                        charIndex = z.indexOf("H"); 
+                        h = z.substring(2, charIndex);
+                    }
+                    if (z.includes("M")) 
+                    {
+                        charIndex2 = z.indexOf("M"); 
+                        m = z.substring(charIndex + 1, charIndex2);
+                    }
+
+                    // how many minutes late
+                    var totalMinutes = (parseInt(h) * 60 ) + parseInt(m) ;
+
+                    var CancelledCons;
+
+                    if (totalMinutes <= 20) 
+                    {
+                        CancelledCons = "$5";
+                    }
+                    else if (totalMinutes <= 30)
+                    {
+                        CancelledCons = "$10";
+                    }
+                    else
+                    {
+                        CancelledCons = "Full value of order up $25";
+                    }
+
+                    var LateCons;
+                
+                    if (totalMinutes <= 15) 
+                    {
+                        LateCons = "0";
+                    }
+                    else if (totalMinutes <= 45)
+                    {
+                        LateCons = "5";
+                    }
+                    else
+                    {
+                        LateCons = "10";
+                    }
+
+
+                    // if Original ETA
+                    if (indexTypeType == 0) 
+                    {
+                        document.getElementById("demo").innerHTML =   "Concession if Late: $" + LateCons;
+                    }
+                    else if (indexTypeType == 1) //If Placed @
+                    {
+                        document.getElementById("demo").innerHTML = "Concession if Cancelled: " + CancelledCons;
+                    }
+
+                    w = w.replace("M", " M ");  
+                    w = w.replace("H", " H ");
+                    w = w.replace("PT", "");
+
+                    y = "Late by " + w;
+                }
+                document.getElementById("txtDiff").value = y ;
+            }
+            else // 2
+            { 
+                calcDifference2();
+            }
         }
-        else //am
+
+        function calcDifference2()
+        {
+            document.getElementById("demo").innerHTML = "";
+
+            //Split the 
+            //  00:00   -  23.59 
+            var dateONE = document.getElementById("myTime2").value;
+            //  12:00 am HST  - 11:59 pm HST
+            var dateTWO = document.getElementById("myTime3").value;
+
+            var dateStr1 = document.getElementById("myDate2").value + " " + dateONE;
+ 
+            var dateStr2 = document.getElementById("myDate3").value + " " + dateTWO;
+ 
+            //DATES 
+            var date1 = moment( dateStr1 );
+            var date2 = moment( dateStr2 );
+
+            differenceInMs = date2.diff(date1); // diff yields milliseconds
+
+            duration = moment.duration(differenceInMs); 
+
+            // THISONE UP 
+            differenceInMinutes = duration.asMinutes(); // if you would like to have the output 559
+
+            var x = duration;
+
+            w = x.toString();
+        
+            z =  x.toString();
+
+            var h = "0";
+            var m = "0";
+
+            var y = "";
+
+            if (w == "P0D")  // Same Time
+            {
+                y = "Same Time 'Late'";
+    
+                // if Original ETA
+                if (indexTypeType == 0) 
+                {
+                    document.getElementById("demo").innerHTML =   "Concession if Late: $0";
+                }
+                else if (indexTypeType == 1) //If Placed @
+                {
+                    document.getElementById("demo").innerHTML = "Concession if Cancelled: $5";
+                }
+            }
+            else if(w.charAt(0) == "-") // On_Time
+            { 
+
+                w = w.replace("-", ""); 
+                w = w.replace("M", " M ");  
+                w = w.replace("H", " H ");
+                w = w.replace("PT", "");
+
+                y = "On Time by " + w;
+            }
+            else if(w.charAt(0) == "P") // LATE
+            {
+
+                // contains H
+                //z = PT1H1M
+                var charIndex = 1;
+                var charIndex2;
+
+                if (z.includes("H")) 
+                {
+                    charIndex = z.indexOf("H"); 
+                    h = z.substring(2, charIndex);
+                }
+
+                if (z.includes("M")) 
+                {
+                    charIndex2 = z.indexOf("M"); 
+                m = z.substring(charIndex + 1, charIndex2);
+                }
+
+                // how many minutes late
+                var totalMinutes = (parseInt(h) * 60 ) + parseInt(m) ;
+
+                var CancelledCons;
+                if (totalMinutes <= 20) 
+                {
+                    CancelledCons = "$5";
+                }
+                else if (totalMinutes <= 30)
+                {
+                    CancelledCons = "$10";
+                }
+                else
+                {
+                    CancelledCons = "Full value of order up $25";
+                }
+
+                var LateCons;
+            
+                if (totalMinutes <= 15) 
+                {
+                    LateCons = "0";
+                }
+                else if (totalMinutes <= 45)
+                {
+                    LateCons = "5";
+                }
+                else
+                {
+                    LateCons = "10";
+                }
+
+                w = w.replace("M", " M ");  
+                w = w.replace("H", " H ");
+                w = w.replace("PT", "");
+
+                y = "Late by " + w;
+            }
+            
+            document.getElementById("txtDiff").value = y ;
+        }
+
+        function myUpdate() 
         {
 
-            HOUR_AM_PM = temp2[0];
-            // If 12 am = 00 hour
-            if (HOUR_AM_PM == 12) {
-                HOUR_AM_PM = "00";
-            }
-
-        }
-
-        //strings
-        var strMilHour1 = temp1[0];
-        var strMilHour2 = HOUR_AM_PM;
-
-        //ints
-        var theTime1 = parseInt(temp1[0])
-        var theTime2 = parseInt(HOUR_AM_PM)
-
-        //DATES 2
-        var date = [];
-
-
-         date[0] = moment().tz('Pacific/Honolulu').format("YYYY-MM-DD");
-         date[1] = moment().tz('America/Anchorage').format("YYYY-MM-DD");   //
-         date[2] = moment().tz('America/Los_Angeles').format("YYYY-MM-DD");   //
-         date[3] = moment().tz('America/Phoenix').format("YYYY-MM-DD");   //
-         date[4] = moment().tz('America/Denver').format("YYYY-MM-DD");   //
-         date[5] = moment().tz('America/Tegucigalpa').format("YYYY-MM-DD");   //
-         date[6] = moment().tz('America/Chicago').format("YYYY-MM-DD");   //
-         date[7] = moment().tz('America/New_York').format("YYYY-MM-DD");   //
-
-        var dateStr2 ;
-
-           dateStr2 =  date[indexTimeZone] + " " +  strMilHour2 + ":" + temp2_1[0]+ ":00";
-
-       
-        var dateStr1 = document.getElementById("myDate").value + " " + dateONE;
- 
-
-        var date1 = moment( dateStr1 );
-        var date2 = moment( dateStr2 );
-
-
-
-        differenceInMs = date2.diff(date1); // diff yields milliseconds
-
-
-
-        duration = moment.duration(differenceInMs); 
-
-        // THISONE UP 
-        differenceInMinutes = duration.asMinutes(); // if you would like to have the output 559
-
-
-        var x = duration;
-
-
-        //PT24H // Late: 1 day
-
-        //P0D  //Same hour and minute
-
-        //PT1M  // Late: 1 minute
-        //PT1H  //Late: 1 hour
-        //PT1H1M  //Late: 1 hour and 1 minute
-
-        //-PT1H // On_Time: 1 hour
-        //-PT1M // On_Time: 1 minute
-        //-PT1H1M  //On_Time 1 hour and 1 minute
-
-        w = x.toString();
-        //
-        z =  x.toString();
-
-        var h = "0";
-        var m = "0";
-
-
-
-        var y = "";
-
-        if (w == "P0D")  // Same Time
-        {
-        y = "Same Time 'Late'";
-
-            // if Original ETA
-            if (indexTypeType == 0) 
-            {
-            document.getElementById("demo").innerHTML =   "Concession if Late: $0";
-
-            }
-            else if (indexTypeType == 1) //If Placed @
-            {
-             document.getElementById("demo").innerHTML = "Concession if Cancelled: $5";
-            }
-
-
-        //document.getElementById("demo2").innerHTML = "Concession if Late: $0";
-
-        }
-        else if(w.charAt(0) == "-") // On_Time
-        { 
-
-        w = w.replace("-", ""); 
-        w = w.replace("M", " M ");  
-        w = w.replace("H", " H ");
-        w = w.replace("PT", "");
-
-        y = "On Time by " + w;
-
-        }
-        else if(w.charAt(0) == "P"){ // LATE
-
-        // contains H
-        //z = PT1H1M
-        var charIndex = 1;
-        var charIndex2;
-
-        if (z.includes("H")) {
-             charIndex = z.indexOf("H"); 
-            h = z.substring(2, charIndex);
-        }
-
-
-        if (z.includes("M")) {
-            charIndex2 = z.indexOf("M"); 
-            m = z.substring(charIndex + 1, charIndex2);
-        }
-
-
-
-        // how many minutes late
-        var totalMinutes = (parseInt(h) * 60 ) + parseInt(m) ;
-
-        //alert (totalMinutes);
-
-        var CancelledCons;
-        if (totalMinutes <= 20) {
-
-        CancelledCons = "$5";
-        }
-        else if (totalMinutes <= 30){
-        CancelledCons = "$10";
-        }
-        else{
-        CancelledCons = "Full value of order up $25";
-
-        }
-
-        var LateCons;
-        if (totalMinutes <= 15) {
-
-        LateCons = "0";
-
-        }
-        else if (totalMinutes <= 45){
-
-        LateCons = "5";
-
-        }
-        else{
-
-        LateCons = "10";
-        }
-
-
-            // if Original ETA
-            if (indexTypeType == 0) 
-            {
-            document.getElementById("demo").innerHTML =   "Concession if Late: $" + LateCons;
-
-            }
-            else if (indexTypeType == 1) //If Placed @
-            {
-             document.getElementById("demo").innerHTML = "Concession if Cancelled: " + CancelledCons;
-            }
-
-  
-
-
-        w = w.replace("M", " M ");  
-        w = w.replace("H", " H ");
-        w = w.replace("PT", "");
-
-        y = "Late by " + w;
-        }
-        document.getElementById("txtDiff").value = y ;
-}
-else{ // 2
-
-
-calcDifference2();
-
-}
-       
-
-}
-
-
- function calcDifference2(){
-
-        document.getElementById("demo").innerHTML = "";
-
-        //Split the 
-        //  00:00   -  23.59 
-        var dateONE = document.getElementById("myTime2").value;
-        //  12:00 am HST  - 11:59 pm HST
-        var dateTWO = document.getElementById("myTime3").value;
-
-    var dateStr1 = document.getElementById("myDate2").value + " " + dateONE;
- 
-    var dateStr2 = document.getElementById("myDate3").value + " " + dateTWO;
- 
-
-        //DATES 
-        var date1 = moment( dateStr1 );
-        var date2 = moment( dateStr2 );
-
-
-        differenceInMs = date2.diff(date1); // diff yields milliseconds
-
-        duration = moment.duration(differenceInMs); 
-
-        // THISONE UP 
-        differenceInMinutes = duration.asMinutes(); // if you would like to have the output 559
-
-
-        var x = duration;
-
-
-
- w = x.toString();
-        //
-        z =  x.toString();
-
-        var h = "0";
-        var m = "0";
-
-
-
-        var y = "";
-
-        if (w == "P0D")  // Same Time
-        {
-        y = "Same Time 'Late'";
-
-            // if Original ETA
-            if (indexTypeType == 0) 
-            {
-            document.getElementById("demo").innerHTML =   "Concession if Late: $0";
-
-            }
-            else if (indexTypeType == 1) //If Placed @
-            {
-             document.getElementById("demo").innerHTML = "Concession if Cancelled: $5";
-            }
-
-
-        //document.getElementById("demo2").innerHTML = "Concession if Late: $0";
-
-        }
-        else if(w.charAt(0) == "-") // On_Time
-        { 
-
-        w = w.replace("-", ""); 
-        w = w.replace("M", " M ");  
-        w = w.replace("H", " H ");
-        w = w.replace("PT", "");
-
-        y = "On Time by " + w;
-
-        }
-        else if(w.charAt(0) == "P"){ // LATE
-
-        // contains H
-        //z = PT1H1M
-        var charIndex = 1;
-        var charIndex2;
-
-        if (z.includes("H")) {
-             charIndex = z.indexOf("H"); 
-            h = z.substring(2, charIndex);
-        }
-
-
-        if (z.includes("M")) {
-            charIndex2 = z.indexOf("M"); 
-            m = z.substring(charIndex + 1, charIndex2);
-        }
-
-
-
-        // how many minutes late
-        var totalMinutes = (parseInt(h) * 60 ) + parseInt(m) ;
-
-        //alert (totalMinutes);
-
-        var CancelledCons;
-        if (totalMinutes <= 20) {
-
-        CancelledCons = "$5";
-        }
-        else if (totalMinutes <= 30){
-        CancelledCons = "$10";
-        }
-        else{
-        CancelledCons = "Full value of order up $25";
-
-        }
-
-        var LateCons;
-        if (totalMinutes <= 15) {
-
-        LateCons = "0";
-
-        }
-        else if (totalMinutes <= 45){
-
-        LateCons = "5";
-
-        }
-        else{
-
-        LateCons = "10";
-        }
-
-
-     
-  
-
-
-        w = w.replace("M", " M ");  
-        w = w.replace("H", " H ");
-        w = w.replace("PT", "");
-
-        y = "Late by " + w;
-        }
-        document.getElementById("txtDiff").value = y ;
-        //document.getElementById("txtDiff").value = x ;
-
-        }
-
-
-
-
-        function myUpdate() {
-
-        //format("YYYY-MM-DD");   
-        var time1 = moment().tz('Pacific/Honolulu').format("hh:mm a z");
-        var time2 = moment().tz('America/Anchorage').format("hh:mm a z");   //
-        var time3 = moment().tz('America/Los_Angeles').format("hh:mm a z");   //
-        var time4 = moment().tz('America/Phoenix').format("hh:mm a z");   //
-        var time5 = moment().tz('America/Denver').format("hh:mm a z");   //
-        var time6 = moment().tz('America/Tegucigalpa').format("hh:mm a z");   //
-        var time7 = moment().tz('America/Chicago').format("hh:mm a z");   //
-        var time8 = moment().tz('America/New_York').format("hh:mm a z");   //
-
-
-
-
-
-        //alert("FORMAT" + time1.toDate();
-
-
-        /*
-        Pacific/Honolulu
-        HST
-
-        America/Anchorage
-        AKDT
-
-        America/Los_Angeles
-        PDT
-
-        America/Phoenix
-        MST
-
-        America/Salt_Lake_City
-        MDT
-
-        America/Tegucigalpa
-        CST
-
-        America/Chicago
-        CDT
-
-        America/New_York
-        EDT
-
-
-
-
-
-        */
-
-
+            //format("YYYY-MM-DD");   
+            var time1 = moment().tz('Pacific/Honolulu').format("hh:mm a z");
+            var time2 = moment().tz('America/Anchorage').format("hh:mm a z");   //
+            var time3 = moment().tz('America/Los_Angeles').format("hh:mm a z");   //
+            var time4 = moment().tz('America/Phoenix').format("hh:mm a z");   //
+            var time5 = moment().tz('America/Denver').format("hh:mm a z");   //
+            var time6 = moment().tz('America/Tegucigalpa').format("hh:mm a z");   //
+            var time7 = moment().tz('America/Chicago').format("hh:mm a z");   //
+            var time8 = moment().tz('America/New_York').format("hh:mm a z");   //
+
+            /*
+            Pacific/Honolulu
+            HST
+
+            America/Anchorage
+            AKDT
+
+            America/Los_Angeles
+            PDT
+
+            America/Phoenix
+            MST
+
+            America/Salt_Lake_City
+            MDT
+
+            America/Tegucigalpa
+            CST
+
+            America/Chicago
+            CDT
+
+            America/New_York
+            EDT
+            */
 
            document.getElementById("txtTime1").value = time1  ;
            document.getElementById("txtTime2").value = time2  ;
@@ -805,7 +707,6 @@ calcDifference2();
            document.getElementById("txtTime6").value = time6  ;
            document.getElementById("txtTime7").value = time7  ;
            document.getElementById("txtTime8").value = time8  ;
-
         }
 
        
