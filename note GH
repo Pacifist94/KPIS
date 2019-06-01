@@ -26,8 +26,9 @@ Avoid using "Ok - Excellent"
 ADDRESS UPDATED SLACK
 ---------------------------------------
 @dcare driver accepted to go to the new address on the order: 
-Old address: ,
+Old address: 
 New address: 
+Mileage macro already sent!
 -----------------------------------------------
 @dcare can you assign a driver to order: # 
 -----------------------------------------------
@@ -62,10 +63,11 @@ REFUND EXPECTATION
 We’ve processed the (refund/cancellation/adjustment). You should see the transaction settle shortly, but sometimes it can take a few days, depending on your bank. If you don’t see this adjustment after 5 business days, please reach out to your bank."
 
 
+----------------------
+If you are contacted by a diner about a lawsuit they indicate is called Tiffin or about phone orders, please use the following statement:
 
+ “Our legal team has reviewed the filing and is actively exploring all avenues of response.”
 
-The offer in the email ($12 off first-ever Grubhub order of $15+) is only valid with select participating Pizza Hut locations in Chicago, Pittsburgh, and Las Vegas. 
+If you are contacted by a restaurant about a lawsuit they indicate is called Tiffin or about phone orders, please use the following statement: 
 
-subject line: Get $12 off and free delivery on your Pizza Hut order”.
-: PIZZA314
-
+“Please contact your account advisor. He or she is better fit to connect with you about this.”
