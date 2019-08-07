@@ -1,0 +1,664 @@
+<html>
+    <head>
+        <title>KPIs</title>
+        <style> 
+            /*Set Default 0 margin*/ 
+            html,body{ 
+                margin:0; 
+            } 
+            div.divWrap{ 
+                background-color: #000000; 
+                opacity:0.85; 
+                width: 100%; 
+                height:1300px; 
+            } 
+            div.divTime{ 
+                    background-image: -webkit-linear-gradient(top, #00cc44, #ccffdd); 
+                opacity:0.85; 
+                width: 200px; 
+                height:500px; 
+                position: fixed;
+                left: 500px;
+                top: 0px;
+            } 
+            input,select,textarea{ 
+                font-family: "Tahoma"; 
+                font-size: 15px; 
+            } 
+            button{ 
+                font-family: "Corbel"; 
+            } 
+            button.green{ 
+               color: #FFFFFF; 
+            } 
+            p_hidden{ 
+                color: #000000; 
+                opacity:0.0; 
+            } 
+            p_title{ 
+                font-family: "Candara"; 
+                font-size: 20px; 
+                color: #ffffff; 
+            } 
+            body{ 
+                font-family: "Candara"; 
+                font-size: 18px; 
+            } 
+            div.DTitle{ 
+                position: absolute; 
+                top: 0px; 
+                left: 0px; 
+                width: 500px; 
+                height: 25px; 
+                padding: 0px; 
+                opacity: 0.8; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999); 
+            } 
+            div.UI{ 
+                position: absolute; 
+                top: 25px; 
+                left: 0px; 
+                width: 500px; 
+                height:500px; 
+                padding: 0px; 
+                opacity: 0.8; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #1ab2ff, #e6f7ff); 
+            } 
+            div.NumberChange{ 
+                position: absolute; 
+                width:520px; 
+                height:310px; 
+                padding: 15px; 
+                opacity: 0.7; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #000000); 
+            } 
+            div.RateChange{ 
+                position: absolute; 
+                width: 520px; 
+                height: 240px; 
+                padding: 15px; 
+                opacity: 0.7; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #000000); 
+            } 
+            div.SIMChange{ 
+                position: absolute; 
+                width: 520px; 
+                height: 260px; 
+                padding: 15px; 
+                opacity: 0.7; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999, #999999, #999999, #999999,#999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #000000); 
+            } 
+            div.FeaturesChange{ 
+                position: absolute; 
+                width: 520px; 
+                height: 310px; 
+                padding: 15px; 
+                opacity: 0.7; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999, #999999,#999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #999999, #000000); 
+            } 
+            div.MakePayment{ 
+                position: absolute; 
+                width: 520px; 
+                height: 100px; 
+                padding: 15px; 
+                opacity: 0.7; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999, #999999, #999999, #999999, #999999, #000000); 
+            } 
+            div.Datapasses{ 
+                position: absolute; 
+                width: 520px; 
+                height: 60px; 
+                padding: 15px; 
+                opacity: 0.7; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999, #999999, #999999, #999999, #999999, #000000); 
+            } 
+            div.Trouble{ 
+                position: absolute; 
+                width: 520px; 
+                height: 120px; 
+                padding: 15px; 
+                opacity: 0.7; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999, #999999, #999999, #999999, #999999, #000000); 
+            } 
+            div.PortConv{ 
+                position: absolute; 
+                width: 520px; 
+                height: 270px; 
+                padding: 15px; 
+                opacity: 0.7; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999, #999999, #999999, #999999, #999999, #000000); 
+            } 
+            div.sub1,div.sub2 { 
+               position: absolute; 
+            } 
+            div.SelfHelp{ 
+                position: absolute; 
+                visibility: hidden; 
+            } 
+            div.SelfHelpOp{ 
+                position: relative; 
+                background-color: #000000; 
+                color: #ffffff; 
+                top: -285px; 
+                padding: 15px; 
+                width: 520px; 
+                height: 890px; 
+                opacity:0.99; 
+                visibility: hidden; 
+            } 
+            div.Table{ 
+                position: absolute; 
+                left: 240px; 
+                top: 490px; 
+                width: 300px; 
+                height: 220px; 
+            } 
+            div.Scratch{ 
+                position: absolute; 
+                left: 228px; 
+                top: 65px; 
+                padding: 2px; 
+                opacity:0.9; 
+                visibility: hidden; 
+                font-family: "Candara"; 
+                font-size: 12px; 
+            } 
+            div.MemoBtn{ 
+                position: absolute; 
+                left: 0px; 
+                top: 975px; 
+                width: 540px; 
+                padding: 5px; 
+                opacity: 0.9; 
+                visibility: hidden; 
+                background-image: -webkit-linear-gradient(top, #000000, #999999, #999999, #000000); 
+            } 
+            div.Memo{ 
+                position: absolute; 
+                left: 0px; 
+                top: 1010px; 
+                opacity: 0.9; 
+                visibility: hidden; 
+            } 
+            div.divCustomize{ 
+                position: fixed; 
+                background-color: #ffffff; 
+                left: 108px; 
+                top: 80px; 
+                opacity: 0.9; 
+                visibility: hidden; 
+            } 
+            body { 
+                background-color: #000000; 
+                /*ackground-image: url('http://area.autodesk.com/th.gen/?n/f7neq-g3wfi-wmvb3-tr477:600x600.jpg'); */
+                background-size:1982px 1300px; 
+                background-repeat: no-repeat; 
+                color: #FFFFFF; 
+            } 
+            button{ 
+                background-image: -webkit-linear-gradient(top, #000000, #999999); 
+                border-radius: 6px; 
+                text-shadow: 2px 4px 4px #ffffff; 
+                font-family: Candara; 
+                color: #FFFFFF; 
+                font-size: 12x; 
+                padding: 1px 1px 1px 1px; 
+                border: solid #0a090a 1px; 
+                text-decoration: none; 
+            } 
+            button:hover { 
+                background: #ff0000; 
+                background-image: -webkit-linear-gradient(top, #ff0000, #ff7700); 
+                background-image: -moz-linear-gradient(top, #ff0000, #ff7700); 
+                background-image: -ms-linear-gradient(top, #ff0000, #ff7700); 
+                background-image: -o-linear-gradient(top, #ff0000, #ff7700); 
+                background-image: linear-gradient(to bottom, #ff0000, #ff7700); 
+                text-decoration: none; 
+            } 
+            input.red{ 
+                background-image: -webkit-linear-gradient(top, #8fd4ff, #3498db); 
+                border-radius: 36px; 
+                text-shadow: 2px 4px 4px #ffffff; 
+                font-family: Candara; 
+                color: #FFFFFF; 
+                font-size: 12x; 
+                padding: 4px 15px 4px 14px; 
+                border: solid #0a090a 1px; 
+                text-decoration: none; 
+            } 
+            input.red:hover { 
+               background-image: -webkit-linear-gradient(top, #8fd4ff, #3498db); 
+            } 
+            #areaScratch, #areaEpin{ 
+                resize:none; 
+            } 
+            #amount{ 
+                text-align: right; 
+            } 
+
+
+
+            .dropbtn {
+                  background-color: #4CAF50;
+                  color: white;
+                  padding: 16px;
+                  font-size: 16px;
+                  border: none;
+                  cursor: pointer;
+                }
+
+            .dropbtn:hover, .dropbtn:focus {
+                  background-color: #3e8e41;
+                }
+
+            #myInput {
+                /*  border-box: box-sizing;*/
+                  /*background-image: url('searchicon.png');*/
+               /*  background-position: 14px 12px;*/
+                /*  background-repeat: no-repeat;*/
+                  font-size: 16px;
+                  padding: 1px 1px 1px 1px;
+                  border: none;
+                  border-bottom: 1px solid #ddd;
+                  text-align: center;
+                  height: 25px;
+                }
+
+            #myInput:focus {outline: 3px solid #ddd;}
+
+            .dropdown {
+                  position: relative;
+                  display: inline-block;
+                }
+
+            .dropdown-content {
+                  display: none;
+                  position: absolute;
+                  left: 30px;
+                  top: -16px;
+                  background-color: #f6f6f6;
+                  min-width: 230px;
+                  width: 200px;
+                  overflow: auto;
+                  border: 1px solid #ddd;
+                  z-index: 1;
+
+                }
+
+            .dropdown-content a {
+                  color: black;
+                  padding: 3px 16px;
+                  text-decoration: none;
+                  display: block;
+              
+                }
+
+            .dropdown a:hover {background-color: #ddd;}
+
+            .show {display: block;}
+
+            input.reason{
+                    font-family: "Tahoma"; 
+                font-size: 10px ; 
+                height: 20px;
+            }
+
+              input.time{
+                    font-family: "Tahoma"; 
+                font-size: 10px ; 
+                height: 20px;
+           
+            }
+            p.other{
+
+				font-family: "Tahoma"; 
+                font-size: 15px ; 
+                height: 20px;
+                color: #000000;
+            }
+
+            html, body {margin: 0; height: 100%; overflow: hidden}
+
+        </style> 
+
+<script src="moment.js"></script>
+<script src="moment-timezone.js"></script>
+<script src="moment-timezone-with-data.js"></script>
+<script src="moment-timezone-with-data-2012-2022.js"></script>
+
+    </head>
+
+    <body onload="fncOnload()">
+        <div id="divWrap" class="divWrap"> 
+            <!-- Use Interface UI--> 
+            <div id="divTitle" class="DTitle" style="visibility: visible;"> 
+                <center><p_title>KPIs v 1.0 </p_title></center>
+            </div> 
+
+           <!-- ___________________________________________________________ --> 
+
+            <center> <!-- BUTTONS --> 
+
+                <div id="divUI" class="UI" style="visibility: visible;"> 
+                    <!-- Creating UI --> 
+                    <form padding="0px"> 
+                        <button  type="button" style="width:160px;height:25px" onclick="fncNumChange()">Restaurant</button> 
+                        <button type="button" style="width:160px;height:25px" onclick="fncRateChange()">Driver</button> 
+                        <button type="button" style="width:160px;height:25px" onclick="fncSimChange()">Diner</button> 
+                        <hr> 
+                    
+                    Reason: 
+            
+                <input   style="width:400px"  class="reason" type="search" autocomplete="off" onclick="searchClick()" placeholder="Search.." id="myInput" onkeypress="searchKeyPress()" onkeydown="searchKeyDown()"  onkeyup="filterFunction() ">
+
+  <br>
+<div class="dropdown">
+
+  <div id="myDropdown" class="dropdown-content" >
+
+<!-- <a href="#blog"  onClick="ReasonDropDownOnClick('Check Status')" >-Check Status</a> -->
+    <a  tabindex='-1' onkeydown="searchKeyDown2()" id="id1"  href="#blog"  onClick="ReasonDropDownOnClick('Late Delivery')" >Late Delivery</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id2" href="#blog"  onClick="ReasonDropDownOnClick('Delivery Estimate Confirmation')" >Delivery Estimate Confirmation</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id3" href="#blog"  onClick="ReasonDropDownOnClick('Order Not Received')" >Order Not Received</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id4" href="#blog"  onClick="ReasonDropDownOnClick('Missed Delivery')" >Missed Delivery</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id5" href="#blog"  onClick="ReasonDropDownOnClick('Order Unwanted - Change of plans')" >Order Unwanted - Change of plans</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id6" href="#blog"  onClick="ReasonDropDownOnClick('Order Unwanted - Too Late')" >Order Unwanted - Too Late</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id7" href="#blog"  onClick="ReasonDropDownOnClick('Restaurant is running late')" >Restaurant is running late</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id8" href="#blog"  onClick="ReasonDropDownOnClick('Driver is running')" >Driver is running late</a>
+<!-- <a href="#blog"  onClick="ReasonDropDownOnClick('Problems With Food')" >-Problems With Food</a> -->
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id9" href="#blog"  onClick="ReasonDropDownOnClick('Food Poisioning Claim')" >Food Poisioning Claim</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id10" href="#blog"  onClick="ReasonDropDownOnClick('Food Allergies')" >Food Allergies </a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id11" href="#blog"  onClick="ReasonDropDownOnClick('Food Temperature')" >Food Temperature</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id12" href="#blog"  onClick="ReasonDropDownOnClick('Food Damaged')" >Food Damaged</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id13" href="#blog"  onClick="ReasonDropDownOnClick('Food Quality')" >Food Quality</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id14" href="#blog"  onClick="ReasonDropDownOnClick('Undercooked Food')" >Undercooked Food</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id15" href="#blog"  onClick="ReasonDropDownOnClick('Foreign Object in Food')" >Foreign Object in Food</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id16" href="#blog"  onClick="ReasonDropDownOnClick('Incorrect Item')" >Incorrect Item</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id17" href="#blog"  onClick="ReasonDropDownOnClick('Incorrect Order')" >Incorrect Order</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id18" href="#blog"  onClick="ReasonDropDownOnClick('Missing Item')" >Missing Item</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id19" href="#blog"  onClick="ReasonDropDownOnClick('Special Instructions Issue')" >Special Instructions Issue</a>
+<!-- <a href="#blog"  onClick="ReasonDropDownOnClick('-Live order Issues')" >-Live order Issues</a> -->
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id20" href="#blog"  onClick="ReasonDropDownOnClick('No Driver')" >No Driver</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id21" href="#blog"  onClick="ReasonDropDownOnClick('Order Not at Restaurant')" >Order Not at Restaurant</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id22" href="#blog"  onClick="ReasonDropDownOnClick('Diner Didn\'t Answer')" >Diner Didn't Answer</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id23" href="#blog"  onClick="ReasonDropDownOnClick('Driver unable to deliver to diner\'s door')" >Driver unable to deliver to diner's door</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id24" href="#blog"  onClick="ReasonDropDownOnClick('Order is Missing an Item')" >Order is Missing an Item </a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id25" href="#blog"  onClick="ReasonDropDownOnClick('Driver Contact-Order is Missing an Item')" >Driver Contact-Order is Missing an Item </a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id26" href="#blog"  onClick="ReasonDropDownOnClick('Restaurant is Closed')" >Restaurant is Closed</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id27" href="#blog"  onClick="ReasonDropDownOnClick('Order/Menu Issue')" >Order/Menu Issue</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id28" href="#blog"  onClick="ReasonDropDownOnClick('Delivery Information Incorrect')" >Delivery Information Incorrect</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id29" href="#blog"  onClick="ReasonDropDownOnClick('Diner\'s Address is Outside of Delivery Boundaries')" >Diner's Address is Outside of Delivery Boundaries</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id30" href="#blog"  onClick="ReasonDropDownOnClick('Driver Lost')" >Driver Lost</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id31" href="#blog"  onClick="ReasonDropDownOnClick('Driver is unable to deliver to a military base')" >Driver is unable to deliver to a military base</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id32" href="#blog"  onClick="ReasonDropDownOnClick('Driver calling from unknown phone number')" >Driver calling from unknown phone number</a>
+<!--<a href="#blog"  onClick="ReasonDropDownOnClick('Order Information Disposition')" >Order Information Disposition</a> -->
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id33" href="#blog"  onClick="ReasonDropDownOnClick('Delivery Address Update')" >Delivery Address Update</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id34" href="#blog"  onClick="ReasonDropDownOnClick('Contact Information Update')" >Contact Information Update</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id35" href="#blog"  onClick="ReasonDropDownOnClick('Order Changed to Delivery')" >Order Changed to Delivery</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id36" href="#blog"  onClick="ReasonDropDownOnClick('Order Changed to Pickup')" >Order Changed to Pickup</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id37" href="#blog"  onClick="ReasonDropDownOnClick('Restaurant Delivery Estimate Update')" >Restaurant Delivery Estimate Update</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id38" href="#blog"  onClick="ReasonDropDownOnClick('Order Details Confirmation')" >Order Details Confirmation</a>
+<!-- <a href="#blog"  onClick="ReasonDropDownOnClick('Order Total Modifications Disposition')" >Order Total Modifications  -->Disposition</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id39" href="#blog"  onClick="ReasonDropDownOnClick('Item Added To Order')" >Item Added To Order</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id40" href="#blog"  onClick="ReasonDropDownOnClick('Item Removed From Order')" >Item Removed From Order</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id41" href="#blog"  onClick="ReasonDropDownOnClick('Item replacement')" >Item replacement</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id42" href="#blog"  onClick="ReasonDropDownOnClick('Tip Added to Order')" >Tip Added to Order</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id43" href="#blog"  onClick="ReasonDropDownOnClick('Tip Removed from Order')" >Tip Removed from Order</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id44" href="#blog"  onClick="ReasonDropDownOnClick('Upcharge-Special Instructions')" >Upcharge-Special Instructions</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id45" href="#blog"  onClick="ReasonDropDownOnClick('Restaurant Requested Refund')" >Restaurant Requested Refund</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id46" href="#blog"  onClick="ReasonDropDownOnClick('Delivery Fee Adjustment-Restaurant Contact')" >Delivery Fee Adjustment-Restaurant Contact</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id47" href="#blog"  onClick="ReasonDropDownOnClick('Delivery Fee Removed from Order - Diner Request')" >Delivery Fee Removed from Order - Diner Request</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id48" href="#blog"  onClick="ReasonDropDownOnClick('Adjustment procedure')" >Adjustment procedure</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id49" href="#blog"  onClick="ReasonDropDownOnClick('Ad Fee Adjustment')" >Ad Fee Adjustment</a>
+<!--<a href="#blog"  onClick="ReasonDropDownOnClick('Compromised Diner Accounts/Blocked Orders/Non-Diner Unknown Charges')" >Compromised Diner Accounts/Blocked Orders/Non-Diner Unknown Charges  </a>-->
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id50" href="#blog"  onClick="ReasonDropDownOnClick('Compromised Diner Accounts')" >Compromised Diner Accounts</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id51" href="#blog"  onClick="ReasonDropDownOnClick('Unknown Charges on bank statement')" >Unknown Charges on bank statement </a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id52" href="#blog"  onClick="ReasonDropDownOnClick('Blocked Orders')" >Blocked Orders</a>
+  
+
+  </div>
+</div>
+                    
+                    Additional Reason:
+                    <br>
+                    <textarea id="areaEpin" rows="2" cols="68" ></textarea> 
+
+                    <hr>
+                    What Actions Did We Take:
+                    <br>
+                    Additional Actions:
+                    <br>
+                    <textarea id="areaActions" rows="2" cols="68" ></textarea> 
+
+                    
+                    
+                    </form> 
+                </div>
+         
+
+
+
+
+    <br> 
+
+
+
+
+<script>
+
+//Global variables
+var myIDS = [];
+var isVisible = false;
+var currentID = 0;
+var previousDir = 0; // 0 Down/ 1 up
+
+
+function searchClick() {
+  document.getElementById("myDropdown").classList.toggle("show");
+
+}
+
+
+function searchKeyDown2() {
+    var e;
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') { // UP ARROW 
+        
+        // 0 DOWN | 1 UP
+        if (previousDir == 1) {
+        
+            //***increase currentID // we need to reset when div is disabled 
+            
+            alert(previousDir);
+        }
+        else if(previousDir == 0){ //if is DOWN
+            
+            alert(previousDir);
+          
+            }
+            //assign value UP
+            previousDir = 1;
+
+             //--currentID;
+
+            document.getElementById(myIDS[currentID ]).focus();
+              //--alert ("focus on " + currentID);
+
+            //increase currentID // we need to reset when div is disabled 
+            
+    }
+    else if (e.keyCode == '40') { //DOWN ARROW
+                
+        
+       
+           
+          //alert("down arrow");
+            
+          //  alert ("focus on " + currentID);
+
+            //increase currentID // we need to reset when div is disabled 
+           //  currentID++;
+
+            if (previousDir == 0) {
+            //increase currentID // we need to reset when div is disabled 
+     
+            alert(previousDir);
+            }
+            else if(previousDir == 1)// if is up
+            {
+      
+            alert(previousDir);
+            }
+
+            //assign value DOWN
+            previousDir = 0;
+
+            document.getElementById(myIDS[currentID ]).focus();
+
+    }
+    else if (e.keyCode == '37') {
+           // left arrow
+    }
+    else if (e.keyCode == '39') {
+           // right arrow
+    }
+
+}
+
+
+function searchKeyDown() { //HEREE ther is a second search keydown we need to see 
+
+//Check if current positon is 0
+if (currentID == 0) {
+
+    var e;
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+        // up arrow
+    }
+    else if (e.keyCode == '40') {
+        // down arrow
+                
+        
+       
+
+          //alert("down arrow");
+            document.getElementById(myIDS[0]).focus();
+            
+            //increase currentID // we need to reset when div is disabled 
+           // currentID++;
+
+            // if previous direction is down
+            if (previousDir = 0) {
+            //increase currentID // we need to reset when div is disabled 
+            currentID++;
+
+            }
+            else// if is up
+            {
+            currentID++;
+            currentID++;
+
+            }
+
+
+            
+    }
+    else if (e.keyCode == '37') {
+           // left arrow
+    }
+    else if (e.keyCode == '39') {
+           // right arrow
+    }
+}
+else {// position is not 0
+
+}
+
+
+
+
+  
+
+}
+
+
+function searchKeyPress() {
+if (document.getElementById("myDropdown").classList.toggle("show")) {
+
+
+}
+else{
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+
+ 
+}
+
+function ReasonDropDownOnClick(reason) {
+
+ document.getElementById("myInput").value = reason;
+   document.getElementById("myDropdown").classList.toggle("show");
+
+   document.getElementById("areaEpin").focus();
+   
+
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  
+  //-- clearArray
+  myIDS = [];
+
+
+  for (i = 0; i < a.length; i++) {
+
+//new
+//alert( a[i].id);
+
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+
+    //-- Fill Array
+
+      myIDS.push(a[i].id);
+
+
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+
+//-- check array content 
+for (j = 0; j < myIDS.length; j++) {
+    //alert(myIDS[j]);  
+}
+
+
+}
+</script>
+
+    </body>
+    </html>
