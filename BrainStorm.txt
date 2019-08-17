@@ -1,0 +1,11 @@
+BrainStorm
+-----------
+Checked Related Ticket 
+  #
+  Delivery attempts 
+  No related tickets 
+  Order was cancelled
+  Order was refunded 
+
+
+-----
