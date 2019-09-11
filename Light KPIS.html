@@ -373,24 +373,9 @@
                 <div id="divUI" class="UI" style="visibility: visible;"> 
                     <!-- Creating UI --> 
                     <form padding="0px"> 
-                       Caller:  <input type="text" id="txtCallerName"  size="10" value="" placeholder="Name">
-        
-        <select id="selectCallerName"     style="width:110px;">
-                <option value="diner">Diner</option>
-                <option value="driver">Driver</option>
-                <option value="restaurant">Restaurant</option>
-                <option value="CXT">CXT</option>
-                <option value="Driver Care">Driver Care</option>
-                <option value="Restaurant Care">Restaurant Care</option>
-                <option value="Corporate Care">Corporate Care</option>
-                <option value="Corporate Care">Pre-Live Driver</option>
-                <option value="Other">Other</option>
-            </select>
-
-                         <input type="text" id="txtCallerName"  size="10" value="" placeholder="Deparment">
+           
 
 
-                        <hr> 
                     
                     Reason: 
             
@@ -871,10 +856,19 @@ function insertTemplate(){
 
 var TemplateString;
 
-if (ReasonID== 22) { // diner did not answer
+if (ReasonID== 0) { // diner did not answer
 
-TemplateString = "Who did we speak with: NAME (driver) What was their issue: Diner did not answer What action did we take: called diner / no answer/ left a VM / send email and text/ advised driver to allow 5-10 minutes/ Then they can mark order as delivered Outbound call notes (if an outbound call was made): yes  Required) Name of the person you spoke with: NAME (diner) Provide a description of what was discussed: No answer *Reminder: Please offer the survey at the end of the call.";
+TemplateString = "Who did we speak with: NAME (diner driver restaurant) \n\nWhat was their issue:  \n\nWhat action did we take:  \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (role)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
 
+
+    document.getElementById("areaAdditionalActions").value = TemplateString;
+
+
+}
+
+else if (ReasonID== 22) { // diner did not answer
+
+TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: Diner did not answer \n\nWhat action did we take: called diner / no answer/ left a VM / send email and text/ advised driver to allow 5-10 minutes/ Then they can mark order as delivered \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (diner)\n\nProvide a description of what was discussed: No answer\n\n\n*Reminder: Please offer the survey at the end of the call.";
 
 
     document.getElementById("areaAdditionalActions").value = TemplateString;
