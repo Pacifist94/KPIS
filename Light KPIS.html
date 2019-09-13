@@ -386,9 +386,10 @@
                     <div class="dropdown">
 
                     <div id="myDropdown" class="dropdown-content" >
-
+<!-- 59 -->
 <!-- <a href="#blog"    onClick="ReasonDropDownOnClick('Check Status')" >-Check Status</a> -->
-    <a  tabindex='-1' onkeydown="searchKeyDown2()" id="id1"  href="#blog"  onClick="ReasonDropDownOnClick('Late Delivery', '1')" >Late Delivery</a>
+    <a  tabindex='-1' onkeydown="searchKeyDown2()" id="id1"  href="#blog"  onClick="ReasonDropDownOnClick('Late Delivery - GHD', '1')" >Late Delivery - GHD</a>
+    <a  tabindex='-1' onkeydown="searchKeyDown2()" id="id58"  href="#blog"  onClick="ReasonDropDownOnClick('Late Delivery - SD', '58')" >Late Delivery - SD</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id2" href="#blog"  onClick="ReasonDropDownOnClick('Delivery Estimate Confirmation', '2')" >Delivery Estimate Confirmation</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id3" href="#blog"  onClick="ReasonDropDownOnClick('Order Not Received', '3')" >Order Not Received</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id4" href="#blog"  onClick="ReasonDropDownOnClick('Missed Delivery', '4')" >Missed Delivery</a>
@@ -411,7 +412,8 @@
 <!-- <a href="#blog"  onClick="ReasonDropDownOnClick('-Live order Issues')" >-Live order Issues</a> -->
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id20" href="#blog"  onClick="ReasonDropDownOnClick('No Driver', '20')" >No Driver</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id21" href="#blog"  onClick="ReasonDropDownOnClick('Order Not at Restaurant', '21')" >Order Not at Restaurant</a>
-    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id22" href="#blog"  onClick="ReasonDropDownOnClick('Diner Didn\'t Answer', '22')" >Diner Didn't Answer</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id22" href="#blog"  onClick="ReasonDropDownOnClick('Diner Didn\'t Answer - GHD', '22')" >Diner Didn't Answer - GHD</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id59" href="#blog"  onClick="ReasonDropDownOnClick('Diner Didn\'t Answer - SD', '59')" >Diner Didn't Answer - SD</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id23" href="#blog"  onClick="ReasonDropDownOnClick('Driver unable to deliver to diner\'s door', '23')" >Driver unable to deliver to diner's door</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id24" href="#blog"  onClick="ReasonDropDownOnClick('Order is Missing an Item', '24')" >Order is Missing an Item </a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id25" href="#blog"  onClick="ReasonDropDownOnClick('Driver Contact-Order is Missing an Item', '25')" >Driver Contact-Order is Missing an Item </a>
@@ -445,7 +447,12 @@
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id50" href="#blog"  onClick="ReasonDropDownOnClick('Compromised Diner Accounts', '50')" >Compromised Diner Accounts</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id51" href="#blog"  onClick="ReasonDropDownOnClick('Unknown Charges on bank statement', '51')" >Unknown Charges on bank statement </a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id52" href="#blog"  onClick="ReasonDropDownOnClick('Blocked Orders', '52')" >Blocked Orders</a>
-  
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id53" href="#blog"  onClick="ReasonDropDownOnClick('Unable to Mark Order as Delivered', '53')" >Unable to Mark Order as Delivered</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id54" href="#blog"  onClick="ReasonDropDownOnClick('Reassign Order', '54')" >Reassign Order</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id55" href="#blog"  onClick="ReasonDropDownOnClick('Market Check', '55')" >Market Check</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id56" href="#blog"  onClick="ReasonDropDownOnClick('Dropped Call', '56')" >Dropped Call</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id57" href="#blog"  onClick="ReasonDropDownOnClick('Dead Air Call', '57')" >Dead Air Call</a>
+    <!--  ENDS 57  -->
 
                 </div>
             </div>
@@ -458,13 +465,25 @@
             <br>
             <textarea id="areaAdditionalActions" rows="25" cols="68" ></textarea> 
             
-            
+           
+
 
 
                     <button  type="button" style="width:500px;height:25px" onclick="fncGenerateNotes()">Generate Notes</button>
         </form> 
     </div>
+      <input   style="position:fixed;width:300px;top:93px;left:500px"  type="text"  id="txtQuick1" onmouseover="this.select();" onmouseout="restorevalue('1')" value=" Called driver diner restaurant / ">
      
+     <input   style="position:fixed;width:300px;top:118px;left:500px"  type="text"  id="txtQuick2" onmouseover="this.select();" onmouseout="restorevalue('2')" value=' Provided Refund Expectations "You should see the transaction settle shortly, withing the next few days..." '>
+   
+    <input   style="position:fixed;width:300px;top:143px;left:500px"  type="text"  id="txtQuick3" onmouseover="this.select();" onmouseout="restorevalue('3')" value=" Checked Ticket #">
+
+     <input   style="position:fixed;width:300px;top:168px;left:500px"  type="text"  id="txtQuick4" onmouseover="this.select();" onmouseout="restorevalue('4')" value=" Offered a Free_Grub of $">
+
+      <input   style="position:fixed;width:300px;top:193px;left:500px"  type="text"  id="txtQuick5" onmouseover="this.select();" onmouseout="restorevalue('5')" value=" Refunded on Grubhub $">
+
+       <input   style="position:fixed;width:300px;top:218px;left:500px"  type="text"  id="txtQuick6" onmouseover="this.select();" onmouseout="restorevalue('6')" value=" Refunded on Restaurant $">
+
 
 
      <div id = "floating" class="floating" style="visibility:hidden; border-radius: 10px ">
@@ -852,11 +871,31 @@ var previousDir = 0; // 0 Down/ 1 up
 
 var ReasonID = 0;// deafault Late Delivery
 
+
+
+function restorevalue( id){
+
+var RValues = [
+  "PLACEHOLDER",
+  " Called driver diner restaurant / ",
+  " Provided Refund Expectations \"You should see the transaction settle shortly, withing the next few days...\" ",
+  " Checked Ticket #",
+  " Offered a Free_Grub of $",
+  " Refunded on Grubhub $",
+  " Refunded on Restaurant $"
+];
+
+    document.getElementById("txtQuick"+ id).value = RValues[id] + "\n";
+
+
+
+}
+
 function insertTemplate(){
 
 var TemplateString;
 
-if (ReasonID== 0) { // diner did not answer
+if (ReasonID== 0) { // Basic Template
 
 TemplateString = "Who did we speak with: NAME (diner driver restaurant) \n\nWhat was their issue:  \n\nWhat action did we take:  \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (role)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
 
@@ -865,10 +904,11 @@ TemplateString = "Who did we speak with: NAME (diner driver restaurant) \n\nWhat
 
 
 }
+else if (ReasonID == 1) { // Late Delivery GHD
 
-else if (ReasonID== 22) { // diner did not answer
+TemplateString = "Who did we speak with: NAME (diner) \n\nWhat was their issue: Late Delivery \n\nWhat action did we take: Called driver/\n- Got ETA  / Updated diner\n- No Answer / send sms requesting ETA\n\n- diner will wait / provided a Free Grub $ \n- diner won\'t wait / Cancelled Unwanted Order Too Late / Provided Refund Expectations \"You should see the transaction settle shortly, withing the next few days...\" \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (driver)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
 
-TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: Diner did not answer \n\nWhat action did we take: called diner / no answer/ left a VM / send email and text/ advised driver to allow 5-10 minutes/ Then they can mark order as delivered \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (diner)\n\nProvide a description of what was discussed: No answer\n\n\n*Reminder: Please offer the survey at the end of the call.";
+
 
 
     document.getElementById("areaAdditionalActions").value = TemplateString;
@@ -876,7 +916,71 @@ TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue:
 
 }
 
+    else if (ReasonID== 22) { // diner did not answer GHD
 
+        TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: Diner did not answer \n\nWhat action did we take: called diner/\n- Informed about delivery\n- No Answer \n     -Left a VM / \n     -Unable to leave a VM /\n\n• Called Alternate Phone\n• Send SMS and Email\n\n-Advised driver to allow 5-10 minutes/ Then they can mark order as delivered\n-Adviced driver to proceed with the delivery  \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (diner)\n\nProvide a description of what was discussed: No answer\n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+
+        document.getElementById("areaAdditionalActions").value = TemplateString;
+
+
+    }
+
+    else if(ReasonID == 53){ //  Unable to mark as delivered
+
+        TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: Unable to mark as delivered \n\nWhat action did we take: send sms to the diner / send macro to Driver Care\n\n\n\nOutbound call notes (if an outbound call was made): no \n\n(Required) Name of the person you spoke with: \n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+
+        document.getElementById("areaAdditionalActions").value = TemplateString;
+    }
+   else if(ReasonID == 54){ //  Reassign Order
+
+        TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: wants to reassign order / \n\nWhat action did we take: Transferred to Driver Care\n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (Driver Care)\n\nProvide a description of what was discussed: informed about driver's request \n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+
+        document.getElementById("areaAdditionalActions").value = TemplateString;
+    }
+    else if(ReasonID == 56){ //  Dropped Call
+
+        TemplateString = "Who did we speak with: NAME (diner driver restaurant)  \n\nWhat was their issue: Call dropped / No interactions  \n\nWhat action did we take: No actions taken\n\n\n\nOutbound call notes (if an outbound call was made): no \n\n(Required) Name of the person you spoke with: \n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+
+        document.getElementById("areaAdditionalActions").value = TemplateString;
+    }
+    else if(ReasonID == 57){ //  Dead Air Call
+
+            TemplateString = "Who did we speak with: NAME (diner driver restaurant)  \n\nWhat was their issue: Dead Air Call/ read script/ Disconnected Call / No interactions  \n\nWhat action did we take: No actions taken\n\n\n\nOutbound call notes (if an outbound call was made): no \n\n(Required) Name of the person you spoke with: \n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+        document.getElementById("areaAdditionalActions").value = TemplateString;
+    }
+    else if(ReasonID == 58){ // Late Delivery SD
+
+        TemplateString = "Who did we speak with: NAME (diner) \n\nWhat was their issue: Late Delivery \n\nWhat action did we take: Called restaurant/\n- Got ETA  / Updated diner\n- No Answer / asked diner if they prefer to wait or cancel\n\n- diner will wait  \n- diner won\'t wait / Informed we will cancel the order and they will receive their money back / Provided Refund Expectations \"You should see the transaction settle shortly, withing the next few days...\"/ called restaurant again about the Unwanted Order Too Late / \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (restaurant)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+
+        document.getElementById("areaAdditionalActions").value = TemplateString;
+    }
+
+  else if (ReasonID== 59) { // diner did not answer GHD
+
+        TemplateString = "Who did we speak with: NAME (restaurant) \n\nWhat was their issue: Diner did not answer \n\nWhat action did we take: called diner/\n- Informed about delivery\n- No Answer \n     -Left a VM / \n     -Unable to leave a VM /\n\n• Called Alternate Phone\n• Send SMS and Email\n\n-Advised restaurant to allow 5-10 minutes/ Then they can mark order as delivered\n-Adviced driver to proceed with the delivery  \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (diner)\n\nProvide a description of what was discussed: No answer\n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+
+        document.getElementById("areaAdditionalActions").value = TemplateString;
+
+
+    }
+
+    else{
+
+        var The_Reason =  document.getElementById("myInput").value ; 
+
+        TemplateString = "Who did we speak with: NAME (diner driver restaurant) \n\nWhat was their issue: " + The_Reason + "  \n\nWhat action did we take:  \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (role)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+
+    document.getElementById("areaAdditionalActions").value = TemplateString;
+
+    }
 
 }
 
@@ -920,7 +1024,8 @@ function chkSendTextClick(){
 
 */
 function fncOnload(){
- 
+     document.getElementById("myInput").focus();
+
 }
 /*
 function fncClose(){
@@ -1375,6 +1480,15 @@ ReasonID = id;
    
    //alert(ReasonID);
 
+
+ //autopopulate
+   if ( document.getElementById("areaAdditionalActions").value == "" ) {
+        insertTemplate();
+
+        document.getElementById("areaAdditionalActions").focus();
+   }
+
+  
 }
 
 function filterFunction() {
