@@ -472,12 +472,12 @@
                     // if Original ETA
                     if (indexTypeType == 0) 
                     {
-                        document.getElementById("demo").innerHTML =   "Concession if Late: $0";
+                        document.getElementById("demo").innerHTML =   "Test Text";
 
                     }
                     else if (indexTypeType == 1) //If Placed @
                     {
-                        document.getElementById("demo").innerHTML = "Concession if Cancelled: $5";
+                        document.getElementById("demo").innerHTML = "Test Text";
                     }
                 }
                 else if(w.charAt(0) == "-") // On_Time
@@ -513,7 +513,11 @@
 
                     var CancelledCons;
 
-                    if (totalMinutes <= 20) 
+                    if (totalMinutes <= 10) 
+                    {
+                        CancelledCons = "$0";
+                    }
+                    else if (totalMinutes <= 20) 
                     {
                         CancelledCons = "$5";
                     }
