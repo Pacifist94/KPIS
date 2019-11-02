@@ -363,7 +363,7 @@
         <div id="divWrap" class="divWrap"> 
             <!-- Use Interface UI--> 
             <div id="divTitle" class="DTitle" style="visibility: visible;"> 
-                <center><p_title>KPIs v 1.0 </p_title></center>
+                <center><p_title>KPIs v 2.0 </p_title></center>
             </div> 
 
            <!-- ___________________________________________________________ --> 
@@ -476,23 +476,28 @@
                     
         </form> 
     </div>
-      <input   style="position:fixed;width:300px;top:93px;left:500px"  type="text"  id="txtQuick1" onmouseover="this.select();" onmouseout="restorevalue('1')" value=" Called driver diner restaurant / ">
+
+<input   style="position:fixed;width:300px;top:93px;left:500px"  type="text"  id="txtQuick1" onmouseover="this.select();" onmouseout="restorevalue('1')" value=" Called diner / ">
      
-   
-   
-    <input   style="position:fixed;width:300px;top:118px;left:500px"  type="text"  id="txtQuick2" onmouseover="this.select();" onmouseout="restorevalue('2')" value=" Checked Ticket #">
+<input   style="position:fixed;width:300px;top:118px;left:500px"  type="text"  id="txtQuick2" onmouseover="this.select();" onmouseout="restorevalue('2')" value=" Called driver / ">
 
-     <input   style="position:fixed;width:300px;top:143px;left:500px"  type="text"  id="txtQuick3" onmouseover="this.select();" onmouseout="restorevalue('3')" value=" Offered a Free_Grub of $">
+<input   style="position:fixed;width:300px;top:143px;left:500px"  type="text"  id="txtQuick3" onmouseover="this.select();" onmouseout="restorevalue('3')" value=" Called restaurant / ">
 
+<input   style="position:fixed;width:300px;top:171px;left:500px"  type="text"  id="txtQuick4" onmouseover="this.select();" onmouseout="restorevalue('4')" value=" Checked Ticket #">
 
-     <input   style="position:fixed;width:300px;top:168px;left:500px"  type="text"  id="txtQuick4" onmouseover="this.select();" onmouseout="restorevalue('4')" value=" Issued a Free_Grub of $">
+<input   style="position:fixed;width:300px;top:199px;left:500px"  type="text"  id="txtQuick5" onmouseover="this.select();" onmouseout="restorevalue('5')" value=" Offered a Free_Grub of %$">
 
-      <input   style="position:fixed;width:300px;top:193px;left:500px"  type="text"  id="txtQuick5" onmouseover="this.select();" onmouseout="restorevalue('5')" value=" Refunded on Grubhub $">
+<input   style="position:fixed;width:300px;top:224px;left:500px"  type="text"  id="txtQuick6" onmouseover="this.select();" onmouseout="restorevalue('6')" value=" Issued a Free_Grub of %$">
 
-       <input   style="position:fixed;width:300px;top:218px;left:500px"  type="text"  id="txtQuick6" onmouseover="this.select();" onmouseout="restorevalue('6')" value=" Refunded on Restaurant $">
+<input   style="position:fixed;width:300px;top:252;left:500px"  type="text"  id="txtQuick7" onmouseover="this.select();" onmouseout="restorevalue('7')" value=" Refunded on Grubhub $">
 
-  <input   style="position:fixed;width:300px;top:243;left:500px"  type="text"  id="txtQuick7" onmouseover="this.select();" onmouseout="restorevalue('7')" value=' Provided Refund Expectations "You should see the transaction settle shortly, withing the next few days..." '>
+<input   style="position:fixed;width:300px;top:277;left:500px"  type="text"  id="txtQuick8" onmouseover="this.select();" onmouseout="restorevalue('8')" value=" Refunded on Restaurant $">
 
+<input   style="position:fixed;width:300px;top:302;left:500px"  type="text"  id="txtQuick9" onmouseover="this.select();" onmouseout="restorevalue('9')" value=" Cancelled on Grubhub / ">
+
+<input   style="position:fixed;width:300px;top:327;left:500px"  type="text"  id="txtQuick10" onmouseover="this.select();" onmouseout="restorevalue('10')" value=" Cancelled on Restaurant / ">
+
+<input   style="position:fixed;width:300px;top:355;left:500px"  type="text"  id="txtQuick11" onmouseover="this.select();" onmouseout="restorevalue('11')" value=' Provided Refund Expectations "You should see the transaction settle shortly, withing the next few days..." '>
 
 
 
@@ -520,12 +525,16 @@ function restorevalue( id){
 
     var RValues = [
       "PLACEHOLDER",
-      " Called driver diner restaurant / ",
+      " Called diner / ",
+      " Called driver / ",
+      " Called restaurant / ",
       " Checked Ticket #",
-      " Offered a Free_Grub of $",
-      " Issued a Free_Grub of $",
+      " Offered a Free_Grub of %$",
+      " Issued a Free_Grub of %$",
       " Refunded on Grubhub $",
       " Refunded on Restaurant $",
+      " Cancelled on Grubhub $",
+      " Cancelled on Restaurant $",
       " Provided Refund Expectations \"You should see the transaction settle shortly, withing the next few days...\" "
     ];
 
@@ -555,7 +564,13 @@ function insertTemplate(){
             
             case '1':
              // Late Delivery - GHD
-                TemplateString = "Who did we speak with: NAME (diner) \n\nWhat was their issue: Late Delivery \n\nWhat action did we take: Called driver/\n¤ Got ETA  / Updated diner\n¤ No Answer / send sms requesting ETA\n\n¤ diner will wait / provided a Free Grub $ \n¤ diner won\'t wait / Cancelled Unwanted Order Too Late / Provided Refund Expectations \"You should see the transaction settle shortly, withing the next few days...\" \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (driver)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+                TemplateString = "Who did we speak with: NAME (diner) \n\nWhat was their issue: Late Delivery \n\nWhat action did we take: Called driver/\n♦ Got ETA  / Updated diner\n♦ No Answer / send sms requesting ETA\n\n♦ diner will wait / provided a Free Grub $ \n♦ diner won\'t wait / Cancelled Unwanted Order Too Late / Provided Refund Expectations \"You should see the transaction settle shortly, withing the next few days...\" \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (driver)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+                document.getElementById("areaAdditionalActions").value = TemplateString;
+            break;
+            case '4':
+             //  Missed Delivery 
+                TemplateString = "Who did we speak with: NAME (diner) \n\nWhat was their issue: Missed Delivery \n\nWhat action did we take: Delivery Attempts on Ticket #\n♦ Offered a Free_Grub of %$\n     ♦ Diner Accepted / \n     ♦ Diner Declined / \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (role)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
 
                 document.getElementById("areaAdditionalActions").value = TemplateString;
             break;
@@ -563,7 +578,7 @@ function insertTemplate(){
 
             case '22':
             // Diner Didn\'t Answer - GHD
-                TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: Diner did not answer \n\nWhat action did we take:\nSend sms to driver about the new flow in the Driver App  \n\ncalled diner/\n¤ Informed about delivery\n¤ No Answer \n     ¤ Left a VM / \n     ¤ Unable to leave a VM /\n\n» Called Alternate Phone\n» Send SMS and Email\n\n¤ Advised driver to allow 5-10 minutes/ Then they can mark order as delivered\n¤ Advised driver to proceed with the delivery  \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (diner)\n\nProvide a description of what was discussed: No answer\n\n\n*Reminder: Please offer the survey at the end of the call.";
+                TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: Diner did not answer \n\nWhat action did we take:\nSend sms to driver about the new flow in the Driver App  \n\ncalled diner/\n♦ Informed about delivery\n♦ No Answer \n     ♦ Left a VM / \n     ♦ Unable to leave a VM /\n\n» Called Alternate Phone\n» Send SMS and Email\n\n♦ Advised driver to allow 5-10 minutes/ Then they can mark order as delivered\n♦ Advised driver to proceed with the delivery  \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (diner)\n\nProvide a description of what was discussed: No answer\n\n\n*Reminder: Please offer the survey at the end of the call.";
 
                 document.getElementById("areaAdditionalActions").value = TemplateString;
             break;
@@ -571,11 +586,24 @@ function insertTemplate(){
 
             case '24':
             // Missing Item - GHD
-                TemplateString = "Who did we speak with: NAME (diner) \n\nWhat was their issue: Missing Item: \n\n\nWhat action did we take: called driver/\n¤ No Answer / Refunded on Grubhub $\n¤ Driver doesn\'t have the missing item/ Refunded on Restaurant $\n¤ Driver has the missing item\n     ¤ Driver will go back/ informed ETA to diner \n     ¤ Driver won\'t go back / Refunded on Grubhub $\n\n»  Provided Refund Expectations \"You should see the transaction settle shortly, withing the next few days...\" \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (driver)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+                TemplateString = "Who did we speak with: NAME (diner) \n\nWhat was their issue: Missing Item: \n\n\nWhat action did we take: called driver/\n♦ No Answer / Refunded on Grubhub $\n♦ Driver doesn\'t have the missing item/ Refunded on Restaurant $\n♦ Driver has the missing item\n     ♦ Driver will go back/ informed ETA to diner \n     ♦ Driver won\'t go back / Refunded on Grubhub $\n\n»  Provided Refund Expectations \"You should see the transaction settle shortly, withing the next few days...\" \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (driver)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
 
                 document.getElementById("areaAdditionalActions").value = TemplateString;
             break;
 
+            case '27':
+            // Order/Menu Issue 
+                TemplateString = "Who did we speak with: NAME (restaurant) \n\nWhat was their issue: Order/Menu Issue []\n\nWhat action did we take: Called diner /\n♦ Informed about Menu Issue\n     ♦ Diner will substitute\n     ♦ Diner will cancel item\n♦ No Answer \n     ♦ Left a VM /Send SMS/ waited some minutes/ called again \n          ♦ Informed about Menu Issue \n               ♦ Diner will substitute\n               ♦ Diner will cancel item\n          ♦ No answer\n               » Refunded on restaurant\n               » Cancelled on restaurant\n\n» Informed restaurant about resolution\n» Updated Menu\n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (diner)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.\n\n****\nHello Grubhub here!, The restaurant REST_NAME is out of ITEM_NAME, they want to know if you want to replace it with something else or if you prefer to cancel it?, I will contact you shortly!\n****";
+
+                document.getElementById("areaAdditionalActions").value = TemplateString;
+            break;
+
+            case '33':
+            // Delivery Address Update - GHD
+                TemplateString = "Who did we speak with: NAME (diner) \n\nWhat was their issue: Delivery Address Update\nNew address: [] \n\nWhat action did we take: Called driver /\n♦ Informed about new address\n     ♦ Driver will go to new address/ Send mileage macro\n     ♦ Driver won\'t go to new address/  Refunded order on Grubhub/ Advised to mark as completed.\n♦ No Answer\n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (driver)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+                document.getElementById("areaAdditionalActions").value = TemplateString;
+            break;
             
             case '53':
             // Unable to Mark Order as Delivered
@@ -610,16 +638,16 @@ function insertTemplate(){
             
 
             case '58':
-            // Late Delivery ¤ SD
-                TemplateString = "Who did we speak with: NAME (diner) \n\nWhat was their issue: Late Delivery \n\nWhat action did we take: Called restaurant/\n¤ Got ETA  / Updated diner\n¤ No Answer / asked diner if they prefer to wait or cancel\n\n¤ diner will wait  \n¤ diner won\'t wait / Informed we will cancel the order and they will receive their money back / Provided Refund Expectations \"You should see the transaction settle shortly, withing the next few days...\"/ called restaurant again about the Unwanted Order Too Late / \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (restaurant)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+            // Late Delivery ♦ SD
+                TemplateString = "Who did we speak with: NAME (diner) \n\nWhat was their issue: Late Delivery \n\nWhat action did we take: Called restaurant/\n♦ Got ETA  / Updated diner\n♦ No Answer / asked diner if they prefer to wait or cancel\n\n♦ diner will wait  \n♦ diner won\'t wait / Informed we will cancel the order and they will receive their money back / Provided Refund Expectations \"You should see the transaction settle shortly, withing the next few days...\"/ called restaurant again about the Unwanted Order Too Late / \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (restaurant)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
 
                 document.getElementById("areaAdditionalActions").value = TemplateString;
             break;
             
 
             case '59':
-            // Diner Didn\'t Answer ¤ SD
-                TemplateString = "Who did we speak with: NAME (restaurant) \n\nWhat was their issue: Diner did not answer \n\nWhat action did we take: called diner/\n¤ Informed about delivery\n¤ No Answer \n     ¤ Left a VM / \n     ¤ Unable to leave a VM /\n\n» Called Alternate Phone\n» Send SMS and Email\n\n¤ Advised restaurant to allow 5-10 minutes/ Then they can mark order as delivered\n¤ Advised restaurant to proceed with the delivery  \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (diner)\n\nProvide a description of what was discussed: No answer\n\n\n*Reminder: Please offer the survey at the end of the call.";
+            // Diner Didn\'t Answer ♦ SD
+                TemplateString = "Who did we speak with: NAME (restaurant) \n\nWhat was their issue: Diner did not answer \n\nWhat action did we take: called diner/\n♦ Informed about delivery\n♦ No Answer \n     ♦ Left a VM / \n     ♦ Unable to leave a VM /\n\n» Called Alternate Phone\n» Send SMS and Email\n\n♦ Advised restaurant to allow 5-10 minutes/ Then they can mark order as delivered\n♦ Advised restaurant to proceed with the delivery  \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (diner)\n\nProvide a description of what was discussed: No answer\n\n\n*Reminder: Please offer the survey at the end of the call.";
 
                 document.getElementById("areaAdditionalActions").value = TemplateString;
             break;
