@@ -533,8 +533,8 @@ function restorevalue( id){
       " Issued a Free_Grub of %$",
       " Refunded on Grubhub $",
       " Refunded on Restaurant $",
-      " Cancelled on Grubhub $",
-      " Cancelled on Restaurant $",
+      " Cancelled on Grubhub / ",
+      " Cancelled on Restaurant / ",
       " Provided Refund Expectations \"You should see the transaction settle shortly, withing the next few days...\" "
     ];
 
@@ -570,7 +570,7 @@ function insertTemplate(){
             break;
             case '4':
              //  Missed Delivery 
-                TemplateString = "Who did we speak with: NAME (diner) \n\nWhat was their issue: Missed Delivery \n\nWhat action did we take: Delivery Attempts on Ticket #\n♦ Offered a Free_Grub of %$\n     ♦ Diner Accepted / \n     ♦ Diner Declined / \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (role)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+                TemplateString = "Who did we speak with: NAME (diner) \n\nWhat was their issue: Missed Delivery \n\nWhat action did we take: Delivery Attempts on Ticket #\n♦ Offered a Free_Grub of %$\n     ♦ Diner Accepted / \n     ♦ Diner Declined / \n\n\n\nOutbound call notes (if an outbound call was made): no \n\n(Required) Name of the person you spoke with: \n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
 
                 document.getElementById("areaAdditionalActions").value = TemplateString;
             break;
