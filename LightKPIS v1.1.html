@@ -357,7 +357,7 @@
 
     </head>
 
-    <body >
+    <body  >
         
 
         <div id="divWrap" class="divWrap"> 
@@ -381,7 +381,7 @@
             
                     <input   style="width:300px"  class="reason" type="search" autocomplete="off" onclick="searchClick()" placeholder="Search.." id="myInput" onkeypress="searchKeyPress()" onkeydown="searchKeyDown()"  onkeyup="filterFunction() ">
 
-                    <button onclick="insertTemplate()"> Insert Template</button>
+                    <button  onclick="insertTemplate()"> Insert Template</button>
                     <br>
                     <div class="dropdown">
 
@@ -421,7 +421,7 @@
 <a tabindex='-1' onkeydown="searchKeyDown2()" id="id61" href="#blog"  onClick="ReasonDropDownOnClick('Missing Item - SD', '61')" >Missing Item - SD</a>
 
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id25" href="#blog"  onClick="ReasonDropDownOnClick('Driver Contact-Order is Missing an Item', '25')" >Driver Contact-Order is Missing an Item </a>
-    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id26" href="#blog"  onClick="ReasonDropDownOnClick('Restaurant is Closed', '26')" >Restaurant is Closed</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id26" href="#blog"  onClick="ReasonDropDownOnClick('Restaurant is Closed', '26')" >Restaurant is Closed - GHD</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id27" href="#blog"  onClick="ReasonDropDownOnClick('Order/Menu Issue', '27')" >Order/Menu Issue</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id28" href="#blog"  onClick="ReasonDropDownOnClick('Delivery Information Incorrect', '28')" >Delivery Information Incorrect</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id29" href="#blog"  onClick="ReasonDropDownOnClick('Diner\'s Address is Outside of Delivery Boundaries', '29')" >Diner's Address is Outside of Delivery Boundaries</a>
@@ -456,6 +456,12 @@
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id55" href="#blog"  onClick="ReasonDropDownOnClick('Market Check', '55')" >Market Check</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id56" href="#blog"  onClick="ReasonDropDownOnClick('Dropped Call', '56')" >Dropped Call</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id57" href="#blog"  onClick="ReasonDropDownOnClick('Dead Air Call', '57')" >Dead Air Call</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id62" href="#blog"  onClick="ReasonDropDownOnClick('Transfer to DC', '62')" >Transfer to DC</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id63" href="#blog"  onClick="ReasonDropDownOnClick('Transfer to CXT', '63')" >Transfer to CXT</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id64" href="#blog"  onClick="ReasonDropDownOnClick('Transfer to Corp', '64')" >Transfer to Corp Care</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id65" href="#blog"  onClick="ReasonDropDownOnClick('Transfer to RC', '65')" >Transfer to RC</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id66" href="#blog"  onClick="ReasonDropDownOnClick('Transfer to DaaS Care', '66')" >Transfer to DaaS Care</a>
+
     <!--  ENDS 57  -->
 
                 </div>
@@ -493,9 +499,9 @@
 
 <input   style="position:fixed;width:300px;top:277;left:500px"  type="text"  id="txtQuick8" onmouseover="this.select();" onmouseout="restorevalue('8')" value=" Refunded on Restaurant $">
 
-<input   style="position:fixed;width:300px;top:302;left:500px"  type="text"  id="txtQuick9" onmouseover="this.select();" onmouseout="restorevalue('9')" value=" Cancelled on Grubhub / ">
+<input   style="position:fixed;width:300px;top:302;left:500px"  type="text"  id="txtQuick9" onmouseover="this.select();" onmouseout="restorevalue('9')" value=" Cancelled order on Grubhub / ">
 
-<input   style="position:fixed;width:300px;top:327;left:500px"  type="text"  id="txtQuick10" onmouseover="this.select();" onmouseout="restorevalue('10')" value=" Cancelled on Restaurant / ">
+<input   style="position:fixed;width:300px;top:327;left:500px"  type="text"  id="txtQuick10" onmouseover="this.select();" onmouseout="restorevalue('10')" value=" Cancelled order on Restaurant / ">
 
 <input   style="position:fixed;width:300px;top:355;left:500px"  type="text"  id="txtQuick11" onmouseover="this.select();" onmouseout="restorevalue('11')" value=' Provided Refund Expectations "You should see the transaction settle shortly, withing the next few days..." '>
 
@@ -503,7 +509,6 @@
 
 
 <script>
-
 
 // INSERT CHAR
 
@@ -521,6 +526,8 @@ var ReasonID = 0;// deafault Late Delivery
 document.getElementById("myInput").focus();
 //fncOnload();
 
+
+
 function restorevalue( id){
 
     var RValues = [
@@ -533,8 +540,8 @@ function restorevalue( id){
       " Issued a Free_Grub of %$",
       " Refunded on Grubhub $",
       " Refunded on Restaurant $",
-      " Cancelled on Grubhub / ",
-      " Cancelled on Restaurant / ",
+      " Cancelled order on Grubhub / ",
+      " Cancelled order on Restaurant / ",
       " Provided Refund Expectations \"You should see the transaction settle shortly, withing the next few days...\" "
     ];
 
@@ -590,6 +597,15 @@ function insertTemplate(){
 
                 document.getElementById("areaAdditionalActions").value = TemplateString;
             break;
+
+
+            case '26':
+            // Restaurant is Closed - GHD
+                TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: Restaurant is Closed \n\nWhat action did we take: called restaurant/\n♦ No Answer\n     ♦ Called Primary/ \n          ♦ No answer \n          ♦ They answered \n               ♦ Confirmed they are open/ \n               ♦ Confirmed they are closed/\n♦ They Answered\n     ♦ Confirmed they are open/ \n     ♦ Confirmed they are closed/ \n\n» Set Restaurant to Stop Taking Orders\n\n» Cancelled order on Restaurant /\n\n» Called diner /\n♦ No Answer \n     ♦ Left a VM / \n     ♦ Unable to leave a VM /\n ♦ Informed about Cancellation\n\n» Provided Refund Expectations \"You should see the transaction settle shortly, withing the next few days...\"\n\n Issued a Free_Grub of %$ \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (restaurant)\n\nProvide a description of what was discussed: \n\n\n(Required) Name of the person you spoke with: NAME (diner)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+                document.getElementById("areaAdditionalActions").value = TemplateString;
+            break;
+
 
             case '27':
             // Order/Menu Issue 
@@ -652,6 +668,41 @@ function insertTemplate(){
                 document.getElementById("areaAdditionalActions").value = TemplateString;
             break;
         
+            case '62':
+            // Transfer to Driver Care
+                TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: wants to \n\nWhat action did we take: Transferred to Driver Care\n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (Driver Care)\n\nProvide a description of what was discussed: informed about driver's request \n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+                document.getElementById("areaAdditionalActions").value = TemplateString;
+            break;
+
+            case '63':
+            // Transfer to CXT Care
+                TemplateString = "Who did we speak with: NAME (diner) \n\nWhat was their issue: wants to \n\nWhat action did we take: Transferred to CXT\n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (CXT)\n\nProvide a description of what was discussed: informed about diner's request \n\n\n*Reminder: Please offer the survey at the end of the call.\n Approved by ";
+
+                document.getElementById("areaAdditionalActions").value = TemplateString;
+            break;
+
+          case '64':
+            // Transfer to Corp Care
+                TemplateString = "Who did we speak with: NAME (diner driver restaurant) \n\nWhat was their issue: wants to \n\nWhat action did we take: Transferred to Corporate Care\n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (Corporate Care)\n\nProvide a description of what was discussed: informed about caller's request \n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+                document.getElementById("areaAdditionalActions").value = TemplateString;
+            break;
+
+          case '65':
+            // Transfer to Restaurant Care
+                TemplateString = "Who did we speak with: NAME (restaurant) \n\nWhat was their issue: wants to \n\nWhat action did we take: Transferred to Restaurant Care\n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (Restaurant Care)\n\nProvide a description of what was discussed: informed about restaurant's request \n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+                document.getElementById("areaAdditionalActions").value = TemplateString;
+            break;
+
+            case '66':
+            // Transfer to DaaS
+                TemplateString = "Who did we speak with: NAME (diner driver restaurant) \n\nWhat was their issue: wants to \n\nWhat action did we take: Transferred to DaaS Care\n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (DaaS Care)\n\nProvide a description of what was discussed: informed about caller's request \n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+
+                document.getElementById("areaAdditionalActions").value = TemplateString;
+            break;
 
             default:
             // Phone Notes Template
