@@ -386,7 +386,7 @@
                     <div class="dropdown">
 
                     <div id="myDropdown" class="dropdown-content" >
-<!-- 61   18x-->
+<!-- 66   18x-->
 <!-- <a href="#blog"    onClick="ReasonDropDownOnClick('Check Status')" >-Check Status</a> -->
     <a  tabindex='-1' onkeydown="searchKeyDown2()" id="id1"  href="#blog"  onClick="ReasonDropDownOnClick('Late Delivery - GHD', '1')" >Late Delivery - GHD</a>
     <a  tabindex='-1' onkeydown="searchKeyDown2()" id="id58"  href="#blog"  onClick="ReasonDropDownOnClick('Late Delivery - SD', '58')" >Late Delivery - SD</a>
@@ -452,7 +452,8 @@
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id51" href="#blog"  onClick="ReasonDropDownOnClick('Unknown Charges on bank statement', '51')" >Unknown Charges on bank statement </a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id52" href="#blog"  onClick="ReasonDropDownOnClick('Blocked Orders', '52')" >Blocked Orders</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id53" href="#blog"  onClick="ReasonDropDownOnClick('Unable to Mark Order as Delivered', '53')" >Unable to Mark Order as Delivered</a>
-    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id54" href="#blog"  onClick="ReasonDropDownOnClick('Reassign Order', '54')" >Reassign Order</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id67" href="#blog"  onClick="ReasonDropDownOnClick('Reassign Order', '67')" >Reassign Order CC</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id54" href="#blog"  onClick="ReasonDropDownOnClick('Reassign Order', '54')" >Reassign Order DC</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id55" href="#blog"  onClick="ReasonDropDownOnClick('Market Check', '55')" >Market Check</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id56" href="#blog"  onClick="ReasonDropDownOnClick('Dropped Call', '56')" >Dropped Call</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id57" href="#blog"  onClick="ReasonDropDownOnClick('Dead Air Call', '57')" >Dead Air Call</a>
@@ -630,7 +631,7 @@ function insertTemplate(){
             
 
             case '54':
-            // Reassign Order
+            // Reassign Order DC
                 TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: wants to reassign order / \n\nWhat action did we take: Transferred to Driver Care\n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (Driver Care)\n\nProvide a description of what was discussed: informed about driver's request \n\n\n*Reminder: Please offer the survey at the end of the call.";
 
                 document.getElementById("areaAdditionalActions").value = TemplateString;
@@ -668,6 +669,13 @@ function insertTemplate(){
                 document.getElementById("areaAdditionalActions").value = TemplateString;
             break;
         
+          case '60':
+            // Missing Item - JIT
+                TemplateString = "Who did we speak with: NAME (diner) \n\nWhat was their issue: Missing Item: \n\n\nWhat action did we take:\nRefunded on Restaurant $ / \n\n»  Provided Refund Expectations \"You should see the transaction settle shortly, withing the next few days...\" \n\n\n\nOutbound call notes (if an outbound call was made): no \n\n(Required) Name of the person you spoke with: \n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+                document.getElementById("areaAdditionalActions").value = TemplateString;
+            break;
+
             case '62':
             // Transfer to Driver Care
                 TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: wants to \n\nWhat action did we take: Transferred to Driver Care\n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (Driver Care)\n\nProvide a description of what was discussed: informed about driver's request \n\n\n*Reminder: Please offer the survey at the end of the call.";
@@ -703,6 +711,16 @@ function insertTemplate(){
 
                 document.getElementById("areaAdditionalActions").value = TemplateString;
             break;
+
+
+            case '67':
+              // Reassign Order CC
+                TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: wants to reassign order: [] / \n\nWhat action did we take:\nReassigned order \n♦ Informed it will impact Acceptance Rate \n♦ Informed it won't impact Acceptance Rate\n\n»Informed block will be ended/ send macro to end current block  \n\n\n\nOutbound call notes (if an outbound call was made): no \n\n(Required) Name of the person you spoke with:\n\nProvide a description of what was discussed:\n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+                document.getElementById("areaAdditionalActions").value = TemplateString;
+            break;
+
+
 
             default:
             // Phone Notes Template
