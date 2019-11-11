@@ -386,9 +386,11 @@
                     <div class="dropdown">
 
                     <div id="myDropdown" class="dropdown-content" >
-<!-- 66   18x-->
+<!-- 68   18x-->
 <!-- <a href="#blog"    onClick="ReasonDropDownOnClick('Check Status')" >-Check Status</a> -->
     <a  tabindex='-1' onkeydown="searchKeyDown2()" id="id1"  href="#blog"  onClick="ReasonDropDownOnClick('Late Delivery - GHD', '1')" >Late Delivery - GHD</a>
+    <a  tabindex='-1' onkeydown="searchKeyDown2()" id="id68"  href="#blog"  onClick="ReasonDropDownOnClick('No Driver & Late - GHD )', '68')" >No Driver & Late - GHD </a>
+
     <a  tabindex='-1' onkeydown="searchKeyDown2()" id="id58"  href="#blog"  onClick="ReasonDropDownOnClick('Late Delivery - SD', '58')" >Late Delivery - SD</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id2" href="#blog"  onClick="ReasonDropDownOnClick('Delivery Estimate Confirmation', '2')" >Delivery Estimate Confirmation</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id3" href="#blog"  onClick="ReasonDropDownOnClick('Order Not Received', '3')" >Order Not Received</a>
@@ -572,7 +574,7 @@ function insertTemplate(){
             
             case '1':
              // Late Delivery - GHD
-                TemplateString = "Who did we speak with: NAME (diner) \n\nWhat was their issue: Late Delivery \n\nWhat action did we take: Called driver/\n♦ Got ETA  / Updated diner\n♦ No Answer / send sms requesting ETA\n\n♦ diner will wait / provided a Free Grub $ \n♦ diner won\'t wait / Cancelled Unwanted Order Too Late / Provided Refund Expectations \"You should see the transaction settle shortly, withing the next few days...\" \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (driver)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+                TemplateString = "Who did we speak with: NAME (diner) \n\nWhat was their issue: Late Delivery \n\nWhat action did we take: Called driver/\n♦ Got ETA  / Updated diner\n♦ No Answer / send sms requesting ETA\n\n♦ diner will wait / provided a Free_Grub %$ \n♦ diner won\'t wait / Cancelled Unwanted Order Too Late / Provided Refund Expectations \"You should see the transaction settle shortly, withing the next few days...\" \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (driver)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
 
                 document.getElementById("areaAdditionalActions").value = TemplateString;
             break;
@@ -583,6 +585,13 @@ function insertTemplate(){
                 document.getElementById("areaAdditionalActions").value = TemplateString;
             break;
             
+            case '21':
+              // Order not at Restaurant
+                TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: Order Not at Restaurant\n\nWhat action did we take:\ncalled restaurant/\n♦ They do not have the order\n     ♦ Resend Order /\n♦ They have the order \n     ♦ Got Preparation Time\n\n» Updated Driver\n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (restaurant)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+                document.getElementById("areaAdditionalActions").value = TemplateString;
+            break;
+
 
             case '22':
             // Diner Didn\'t Answer - GHD
@@ -624,7 +633,7 @@ function insertTemplate(){
             
             case '53':
             // Unable to Mark Order as Delivered
-                TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: Unable to mark as delivered \n\nWhat action did we take: send sms to the diner / send macro to Driver Care\n\n\n\nOutbound call notes (if an outbound call was made): no \n\n(Required) Name of the person you spoke with: \n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+                TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: Unable to mark as delivered \n\nWhat action did we take: send sms to the diner / marked order as Delivered\n\n\n\nOutbound call notes (if an outbound call was made): no \n\n(Required) Name of the person you spoke with: \n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
 
                 document.getElementById("areaAdditionalActions").value = TemplateString;
             break;
@@ -716,6 +725,13 @@ function insertTemplate(){
             case '67':
               // Reassign Order CC
                 TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: wants to reassign order: [] / \n\nWhat action did we take:\nReassigned order \n♦ Informed it will impact Acceptance Rate \n♦ Informed it won't impact Acceptance Rate\n\n»Informed block will be ended/ send macro to end current block  \n\n\n\nOutbound call notes (if an outbound call was made): no \n\n(Required) Name of the person you spoke with:\n\nProvide a description of what was discussed:\n\n\n*Reminder: Please offer the survey at the end of the call.";
+
+                document.getElementById("areaAdditionalActions").value = TemplateString;
+            break;
+
+            case '68':
+              // No Driver & Late - GHD 
+                TemplateString = "Who did we speak with: NAME (diner) \n\nWhat was their issue: Late Delivery / \n\nWhat action did we take: (No driver)\nInformed we are working to have this order delivered ASAP, \nAsked if they want to Cancel or if they want to wait for the order/\n\n♦ diner will wait / provided a Free_Grub %$\n♦ diner won't wait / Cancelled Unwanted Order Too Late / Provided Refund Expectations \"You should see the transaction settle shortly, withing the next few days...\"  \n\n\n\nOutbound call notes (if an outbound call was made): no \n\n(Required) Name of the person you spoke with:\n\nProvide a description of what was discussed:\n\n\n*Reminder: Please offer the survey at the end of the call.";
 
                 document.getElementById("areaAdditionalActions").value = TemplateString;
             break;
