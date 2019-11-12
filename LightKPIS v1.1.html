@@ -386,7 +386,7 @@
                     <div class="dropdown">
 
                     <div id="myDropdown" class="dropdown-content" >
-<!-- 68   18x-->
+<!-- 69   18x-->
 <!-- <a href="#blog"    onClick="ReasonDropDownOnClick('Check Status')" >-Check Status</a> -->
     <a  tabindex='-1' onkeydown="searchKeyDown2()" id="id1"  href="#blog"  onClick="ReasonDropDownOnClick('Late Delivery - GHD', '1')" >Late Delivery - GHD</a>
     <a  tabindex='-1' onkeydown="searchKeyDown2()" id="id68"  href="#blog"  onClick="ReasonDropDownOnClick('No Driver & Late - GHD )', '68')" >No Driver & Late - GHD </a>
@@ -414,6 +414,7 @@
 <!-- <a href="#blog"  onClick="ReasonDropDownOnClick('-Live order Issues')" >-Live order Issues</a> -->
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id20" href="#blog"  onClick="ReasonDropDownOnClick('No Driver', '20')" >No Driver</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id21" href="#blog"  onClick="ReasonDropDownOnClick('Order Not at Restaurant', '21')" >Order Not at Restaurant</a>
+    <a tabindex='-1' onkeydown="searchKeyDown2()" id="id69" href="#blog"  onClick="ReasonDropDownOnClick('Order Not at Restaurant - JIT', '69')" >Order Not at Restaurant - JIT</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id22" href="#blog"  onClick="ReasonDropDownOnClick('Diner Didn\'t Answer - GHD', '22')" >Diner Didn't Answer - GHD</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id59" href="#blog"  onClick="ReasonDropDownOnClick('Diner Didn\'t Answer - SD', '59')" >Diner Didn't Answer - SD</a>
     <a tabindex='-1' onkeydown="searchKeyDown2()" id="id23" href="#blog"  onClick="ReasonDropDownOnClick('Driver unable to deliver to diner\'s door', '23')" >Driver unable to deliver to diner's door</a>
@@ -587,7 +588,7 @@ function insertTemplate(){
             
             case '21':
               // Order not at Restaurant
-                TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: Order Not at Restaurant\n\nWhat action did we take:\ncalled restaurant/\n♦ They do not have the order\n     ♦ Resend Order /\n♦ They have the order \n     ♦ Got Preparation Time\n\n» Updated Driver\n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (restaurant)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+                TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: Order Not at Restaurant\n\nWhat action did we take:\ncalled restaurant/\n\n♦ They have the order / Got Preparation Time\n♦ They do not have the order\n     ♦ Resend Order /\n          ♦ Restaurant still does not have the order/\n          ♦ Restaurant got the order/ Got Preparation time\n\n» Updated Driver\n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (restaurant)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
 
                 document.getElementById("areaAdditionalActions").value = TemplateString;
             break;
@@ -736,7 +737,12 @@ function insertTemplate(){
                 document.getElementById("areaAdditionalActions").value = TemplateString;
             break;
 
+           case '69':
+              // Order not at Restaurant JIT
+                TemplateString = "Who did we speak with: NAME (driver) \n\nWhat was their issue: Order Not at Restaurant\n\nWhat action did we take:\n\n»Informed driver to hit arrive on the app\n»Resend the order\n»Informed to allow 5 minutes and he does not have the order after that time he must Contact Care.\n\n***Taco Bell order, driver should ask to any Taco Bell Employee to check order on the mobile view, and to manually check in the order on the POS\n\n\n\nOutbound call notes (if an outbound call was made): no \n\n(Required) Name of the person you spoke with:\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
 
+                document.getElementById("areaAdditionalActions").value = TemplateString;
+            break;
 
             default:
             // Phone Notes Template
