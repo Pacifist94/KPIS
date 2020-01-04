@@ -650,7 +650,7 @@ function insertTemplate(){
 
             case '56':
             // Dropped Call
-                TemplateString = "Who did we speak with: NAME (diner driver restaurant)  \n\nWhat was their issue: Call dropped / No interactions  \n\nWhat action did we take: No actions taken\n\n\n\nOutbound call notes (if an outbound call was made): no \n\n(Required) Name of the person you spoke with: \n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+                TemplateString = "Who did we speak with: NAME (diner driver restaurant)  \n\nWhat was their issue: Call dropped / No interactions  \n\nWhat action did we take: Called back /  \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (role)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
 
                 document.getElementById("areaAdditionalActions").value = TemplateString;
             break;
@@ -658,7 +658,7 @@ function insertTemplate(){
 
             case '57':
             // Dead Air Call
-                TemplateString = "Who did we speak with: NAME (diner driver restaurant)  \n\nWhat was their issue: Dead Air Call/ read script/ Disconnected Call / No interactions  \n\nWhat action did we take: No actions taken\n\n\n\nOutbound call notes (if an outbound call was made): no \n\n(Required) Name of the person you spoke with: \n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
+                TemplateString = "Who did we speak with: NAME (diner driver restaurant)  \n\nWhat was their issue: Dead Air Call/ read script/ Disconnected Call / No interactions  \n\nWhat action did we take: Called back / \n\n\n\nOutbound call notes (if an outbound call was made): yes \n\n(Required) Name of the person you spoke with: NAME (role)\n\nProvide a description of what was discussed: \n\n\n*Reminder: Please offer the survey at the end of the call.";
 
                 document.getElementById("areaAdditionalActions").value = TemplateString;
             break;
